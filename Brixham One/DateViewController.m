@@ -20,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSDate *today = [NSDate date];
+    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-86400];
+    NSDate *begin = [NSDate dateWithTimeIntervalSinceReferenceDate:0];
+    
+    self.beginDate.minimumDate = begin;
+    self.endDate.minimumDate = begin;
+    self.beginDate.maximumDate = yesterday;
+    self.endDate.maximumDate = today;
 
 }
 
