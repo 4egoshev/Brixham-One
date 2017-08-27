@@ -44,6 +44,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
 
+    NSLog(@"date = %@", self.dateArray);
+
     if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
         self.array = self.namesArray;
     } else {

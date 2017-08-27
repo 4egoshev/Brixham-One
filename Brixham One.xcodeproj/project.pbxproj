@@ -69,12 +69,12 @@
 			children = (
 				C92B32111F4F591E00C165B0 /* AppDelegate.h */,
 				C92B32121F4F591E00C165B0 /* AppDelegate.m */,
-				C9705FAE1F534806006B4CE6 /* SWRevealViewController */,
 				C92B32481F4F59D900C165B0 /* Controllers */,
 				C92B323D1F4F59BB00C165B0 /* Main.storyboard */,
 				C92B321A1F4F591E00C165B0 /* Assets.xcassets */,
 				C92B321C1F4F591E00C165B0 /* LaunchScreen.storyboard */,
 				C92B321F1F4F591E00C165B0 /* Info.plist */,
+				C9705FAE1F534806006B4CE6 /* SWRevealViewController */,
 				C92B320E1F4F591E00C165B0 /* Supporting Files */,
 			);
 			path = "Brixham One";
