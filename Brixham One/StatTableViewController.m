@@ -9,6 +9,7 @@
 #import "StatTableViewController.h"
 #import "ListTableViewController.h"
 #import "DateViewController.h"
+#import "SWRevealViewController.h"
 
 @interface StatTableViewController () <ListDelegate, DateDelegate>
 
@@ -19,13 +20,24 @@
 @property (strong, nonatomic) NSArray *sitesArray;
 @property (copy, nonatomic) NSArray *array;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 @end
 
 @implementation StatTableViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
     self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
+
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sidebarButton setTarget: self.revealViewController];
+        [self.sidebarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
 }
 
