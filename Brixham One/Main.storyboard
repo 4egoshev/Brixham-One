@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="-1063" y="646"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Сегодня-->
         <scene sceneID="HkR-HU-xOF">
             <objects>
                 <tableViewController id="kxN-ZR-Z8K" customClass="StatTableViewController" sceneMemberID="viewController">
@@ -83,23 +83,30 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="AtB-vm-Vzs"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="wQz-lc-OXY">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Sa2-KL-boB">
-                            <connections>
-                                <segue destination="8X3-kj-Okr" kind="presentation" identifier="toNameList" id="YXc-92-iVC"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Сегодня" id="wQz-lc-OXY">
+                        <rightBarButtonItems>
+                            <barButtonItem image="Список-25" id="Sa2-KL-boB">
+                                <connections>
+                                    <segue destination="8X3-kj-Okr" kind="presentation" identifier="toNameList" id="YXc-92-iVC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="Календарь-25" id="IeS-XR-1qp">
+                                <connections>
+                                    <segue destination="YX6-jX-vah" kind="presentation" id="Rtl-bP-Wfk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHv-qx-EP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="489" y="1012"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Сайты-->
         <scene sceneID="RPe-cF-IUs">
             <objects>
                 <navigationController id="nzv-iM-tYY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="OPs-EH-b4c"/>
+                    <tabBarItem key="tabBarItem" title="Сайты" image="www-25" id="OPs-EH-b4c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6rr-cb-RaF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -112,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="-271" y="1012"/>
         </scene>
-        <!--Общая-->
+        <!--Сегодня-->
         <scene sceneID="6wl-kZ-8Nk">
             <objects>
                 <tableViewController id="OLn-nh-APW" customClass="StatTableViewController" sceneMemberID="viewController">
@@ -151,12 +158,7 @@
                             <outlet property="delegate" destination="OLn-nh-APW" id="7kX-lX-gDt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Общая" id="iF7-k3-g55">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="HRf-lh-zr1">
-                            <connections>
-                                <action selector="reloadAction:" destination="OLn-nh-APW" id="95d-6r-U4m"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Сегодня" id="iF7-k3-g55">
                         <rightBarButtonItems>
                             <barButtonItem image="Список-25" id="5iI-bJ-lLU">
                                 <connections>
@@ -267,11 +269,11 @@
             </objects>
             <point key="canvasLocation" x="1278" y="322"/>
         </scene>
-        <!--Общая-->
+        <!--Личности-->
         <scene sceneID="FYD-Bz-FUM">
             <objects>
                 <navigationController id="dMg-RF-kbJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Общая" image="Общая-25" id="yam-AR-D7x"/>
+                    <tabBarItem key="tabBarItem" title="Личности" image="Личности-25" id="yam-AR-D7x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y1Y-Pu-pZX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -286,11 +288,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="www-25" width="25" height="25"/>
         <image name="Календарь-25" width="25" height="25"/>
-        <image name="Общая-25" width="25" height="25"/>
+        <image name="Личности-25" width="25" height="25"/>
         <image name="Список-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YXc-92-iVC"/>
+        <segue reference="9xg-XS-vyQ"/>
+        <segue reference="Gyz-jY-30e"/>
     </inferredMetricsTieBreakers>
 </document>

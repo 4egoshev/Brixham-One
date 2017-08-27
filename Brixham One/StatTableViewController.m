@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
     self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
-//    self.array = self.namesArray;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
