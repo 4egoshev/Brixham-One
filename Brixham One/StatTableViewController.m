@@ -8,15 +8,17 @@
 
 #import "StatTableViewController.h"
 #import "ListTableViewController.h"
+#import "DateViewController.h"
 
-@interface StatTableViewController ()
+@interface StatTableViewController () <ListDelegate, DateDelegate>
 
-@property (strong, nonatomic) NSString *site;
+@property (strong, nonatomic) NSString *object;
 @property (strong, nonatomic) NSArray *dateArray;
 
 @property (strong, nonatomic) NSArray *namesArray;
 @property (strong, nonatomic) NSArray *sitesArray;
 @property (copy, nonatomic) NSArray *array;
+
 @end
 
 @implementation StatTableViewController
@@ -29,12 +31,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    NSLog(@"site = %@",self.site);
 
     if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
         self.array = self.namesArray;
     } else {
         self.array = self.sitesArray;
+    }
+
+
+    if (!self.dateArray) {
+        self.navigationItem.title = @"Сегодня";
+    } else {
+        self.navigationItem.title = [NSString stringWithFormat:@"%@-%@",self.dateArray[0],self.dateArray[1]];
     }
 }
 
@@ -68,16 +76,19 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-    if ([segue.identifier isEqualToString:@"toSiteList"]) {
+    if ([segue.identifier isEqualToString:@"toList"] && self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
         ListTableViewController *lvc = [segue destinationViewController];
         lvc.array = self.sitesArray;
-
         lvc.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"toNameList"]) {
+
+    } else if ([segue.identifier isEqualToString:@"toList"] && self.tabBarController.selectedViewController == self.tabBarController.viewControllers[1]) {
         ListTableViewController *lvc = [segue destinationViewController];
         lvc.array = self.namesArray;
-
         lvc.delegate = self;
+
+    } else if ([segue.identifier isEqualToString:@"toDate"]) {
+        DateViewController *dvc = [segue destinationViewController];
+        dvc.delegate = self;
     }
 
 
@@ -86,7 +97,7 @@
 #pragma mark - ListDelegate
 
 - (void)getObject:(NSString *)object {
-    self.site = object;
+    self.object = object;
 }
 
 #pragma mark - DateDelegate

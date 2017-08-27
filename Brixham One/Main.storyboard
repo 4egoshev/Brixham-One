@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,49 +58,6 @@
             </objects>
             <point key="canvasLocation" x="-1063" y="646"/>
         </scene>
-        <!--Сегодня-->
-        <scene sceneID="HkR-HU-xOF">
-            <objects>
-                <tableViewController id="kxN-ZR-Z8K" customClass="StatTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NZX-4J-u1r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="VS0-aY-top">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VS0-aY-top" id="1yN-vv-VQz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="kxN-ZR-Z8K" id="MPa-4J-rsI"/>
-                            <outlet property="delegate" destination="kxN-ZR-Z8K" id="rsT-xh-uK1"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="AtB-vm-Vzs"/>
-                    <navigationItem key="navigationItem" title="Сегодня" id="wQz-lc-OXY">
-                        <rightBarButtonItems>
-                            <barButtonItem image="Список-25" id="Sa2-KL-boB">
-                                <connections>
-                                    <segue destination="8X3-kj-Okr" kind="presentation" identifier="toNameList" id="YXc-92-iVC"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="Календарь-25" id="IeS-XR-1qp">
-                                <connections>
-                                    <segue destination="YX6-jX-vah" kind="presentation" id="Rtl-bP-Wfk"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WHv-qx-EP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="489" y="1012"/>
-        </scene>
         <!--Сайты-->
         <scene sceneID="RPe-cF-IUs">
             <objects>
@@ -112,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="kxN-ZR-Z8K" kind="relationship" relationship="rootViewController" id="8gV-MI-1aV"/>
+                        <segue destination="OLn-nh-APW" kind="relationship" relationship="rootViewController" id="seB-Hk-Zzr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vrf-rh-PV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,23 +115,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Сегодня" id="iF7-k3-g55">
-                        <rightBarButtonItems>
-                            <barButtonItem image="Список-25" id="5iI-bJ-lLU">
-                                <connections>
-                                    <segue destination="8X3-kj-Okr" kind="presentation" identifier="toSiteList" id="9xg-XS-vyQ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="Календарь-25" id="rpH-CA-Jlo">
-                                <connections>
-                                    <segue destination="YX6-jX-vah" kind="presentation" id="Gyz-jY-30e"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" image="Календарь-25" id="rpH-CA-Jlo">
+                            <connections>
+                                <segue destination="YX6-jX-vah" kind="presentation" identifier="toDate" id="Gyz-jY-30e"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Список-25" id="5iI-bJ-lLU">
+                            <connections>
+                                <segue destination="8X3-kj-Okr" kind="presentation" identifier="toList" id="9xg-XS-vyQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAV-nQ-5e9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="490" y="322"/>
+            <point key="canvasLocation" x="518" y="653"/>
         </scene>
         <!--Date View Controller-->
         <scene sceneID="iEX-be-Qc2">
@@ -294,7 +248,6 @@
         <image name="Список-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9xg-XS-vyQ"/>
-        <segue reference="Gyz-jY-30e"/>
+        <segue reference="seB-Hk-Zzr"/>
     </inferredMetricsTieBreakers>
 </document>
