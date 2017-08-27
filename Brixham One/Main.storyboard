@@ -62,13 +62,13 @@
         <!--Root View Controller-->
         <scene sceneID="HkR-HU-xOF">
             <objects>
-                <tableViewController id="kxN-ZR-Z8K" customClass="StatSitesTableViewController" sceneMemberID="viewController">
+                <tableViewController id="kxN-ZR-Z8K" customClass="StatTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NZX-4J-u1r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SityCell" id="VS0-aY-top">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="VS0-aY-top">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VS0-aY-top" id="1yN-vv-VQz">
@@ -115,13 +115,13 @@
         <!--Общая-->
         <scene sceneID="6wl-kZ-8Nk">
             <objects>
-                <tableViewController id="OLn-nh-APW" customClass="StatNameTableViewController" sceneMemberID="viewController">
+                <tableViewController id="OLn-nh-APW" customClass="StatTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GDS-XI-uoQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell" textLabel="77u-Wd-HEy" detailTextLabel="x7I-GD-gKR" style="IBUITableViewCellStyleValue1" id="0l6-6T-Df0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="77u-Wd-HEy" detailTextLabel="x7I-GD-gKR" style="IBUITableViewCellStyleValue1" id="0l6-6T-Df0">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0l6-6T-Df0" id="C1M-e8-UeA">
@@ -291,6 +291,6 @@
         <image name="Список-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9xg-XS-vyQ"/>
+        <segue reference="YXc-92-iVC"/>
     </inferredMetricsTieBreakers>
 </document>

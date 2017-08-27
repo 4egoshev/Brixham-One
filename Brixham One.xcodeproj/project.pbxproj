@@ -14,8 +14,7 @@
 		C92B323E1F4F59BB00C165B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92B323D1F4F59BB00C165B0 /* Main.storyboard */; };
 		C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32401F4F59CF00C165B0 /* DateViewController.m */; };
 		C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32421F4F59CF00C165B0 /* ListTableViewController.m */; };
-		C92B32471F4F59CF00C165B0 /* StatNameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32441F4F59CF00C165B0 /* StatNameTableViewController.m */; };
-		C9F4EC3D1F50AC1E007DAA6F /* StatSitesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F4EC3C1F50AC1E007DAA6F /* StatSitesTableViewController.m */; };
+		C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +30,8 @@
 		C92B32401F4F59CF00C165B0 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		C92B32411F4F59CF00C165B0 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
 		C92B32421F4F59CF00C165B0 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
-		C92B32431F4F59CF00C165B0 /* StatNameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatNameTableViewController.h; sourceTree = "<group>"; };
-		C92B32441F4F59CF00C165B0 /* StatNameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatNameTableViewController.m; sourceTree = "<group>"; };
-		C9F4EC3B1F50AC1E007DAA6F /* StatSitesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatSitesTableViewController.h; sourceTree = "<group>"; };
-		C9F4EC3C1F50AC1E007DAA6F /* StatSitesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatSitesTableViewController.m; sourceTree = "<group>"; };
+		C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatTableViewController.h; sourceTree = "<group>"; };
+		C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +91,8 @@
 				C92B32401F4F59CF00C165B0 /* DateViewController.m */,
 				C92B32411F4F59CF00C165B0 /* ListTableViewController.h */,
 				C92B32421F4F59CF00C165B0 /* ListTableViewController.m */,
-				C92B32431F4F59CF00C165B0 /* StatNameTableViewController.h */,
-				C92B32441F4F59CF00C165B0 /* StatNameTableViewController.m */,
-				C9F4EC3B1F50AC1E007DAA6F /* StatSitesTableViewController.h */,
-				C9F4EC3C1F50AC1E007DAA6F /* StatSitesTableViewController.m */,
+				C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */,
+				C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,9 +170,8 @@
 			files = (
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
-				C9F4EC3D1F50AC1E007DAA6F /* StatSitesTableViewController.m in Sources */,
-				C92B32471F4F59CF00C165B0 /* StatNameTableViewController.m in Sources */,
 				C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */,
+				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

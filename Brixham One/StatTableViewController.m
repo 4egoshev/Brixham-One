@@ -1,33 +1,41 @@
 //
-//  StaticTableViewController.m
-//  Stat
+//  StatTableViewController.m
+//  Brixham One
 //
-//  Created by Александр Чегошев on 18.08.17.
+//  Created by Александр Чегошев on 27.08.17.
 //  Copyright © 2017 Александр Чегошев. All rights reserved.
 //
 
-#import "StatNameTableViewController.h"
+#import "StatTableViewController.h"
 #import "ListTableViewController.h"
-#import "DateViewController.h"
 
-@interface StatNameTableViewController () <ListDelegate, DateDelegate>
+@interface StatTableViewController ()
 
 @property (strong, nonatomic) NSString *site;
 @property (strong, nonatomic) NSArray *dateArray;
-@property (strong, nonatomic) NSArray *namesAraay;
 
+@property (strong, nonatomic) NSArray *namesArray;
+@property (strong, nonatomic) NSArray *sitesArray;
+@property (copy, nonatomic) NSArray *array;
 @end
 
-@implementation StatNameTableViewController
-
+@implementation StatTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.namesAraay = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
+    self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
+    self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
+//    self.array = self.namesArray;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     NSLog(@"site = %@",self.site);
+
+    if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
+        self.array = self.namesArray;
+    } else {
+        self.array = self.sitesArray;
+    }
 }
 
 - (IBAction)reloadAction:(id)sender {
@@ -43,14 +51,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   return self.namesAraay.count;
+    return self.array.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    cell.textLabel.text = self.namesAraay[indexPath.row];
+    cell.textLabel.text = self.array[indexPath.row];
 
     return cell;
 }
@@ -62,10 +70,16 @@
 
     if ([segue.identifier isEqualToString:@"toSiteList"]) {
         ListTableViewController *lvc = [segue destinationViewController];
-        lvc.array = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
+        lvc.array = self.sitesArray;
+
+        lvc.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"toNameList"]) {
+        ListTableViewController *lvc = [segue destinationViewController];
+        lvc.array = self.namesArray;
 
         lvc.delegate = self;
     }
+
 
 }
 
@@ -80,5 +94,6 @@
 - (void)getDateArray:(NSArray *)dateArray {
     self.dateArray = dateArray;
 }
+
 
 @end
