@@ -33,9 +33,11 @@
 
 - (IBAction)doneAction:(id)sender {
 
-    NSLog(@"begin = %@",self.beginDate.date);
-    NSLog(@"end = %@",self.endDate.date);
-    NSArray *dateArray = [NSArray arrayWithObjects:self.beginDate.date,self.endDate.date, nil];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"dd.MM.yy"];
+    NSString *beginDate = [formatter stringFromDate:self.beginDate.date];
+    NSString *endData = [formatter stringFromDate:self.endDate.date];
+    NSArray *dateArray = [NSArray arrayWithObjects:beginDate,endData, nil];
 
     [self.delegate getDateArray:dateArray];
     
