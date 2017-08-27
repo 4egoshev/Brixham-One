@@ -15,6 +15,7 @@
 		C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32401F4F59CF00C165B0 /* DateViewController.m */; };
 		C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32421F4F59CF00C165B0 /* ListTableViewController.m */; };
 		C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */; };
+		C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FB01F534806006B4CE6 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		C92B32421F4F59CF00C165B0 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 		C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatTableViewController.h; sourceTree = "<group>"; };
 		C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
+		C9705FAF1F534806006B4CE6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		C9705FB01F534806006B4CE6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 				C92B321A1F4F591E00C165B0 /* Assets.xcassets */,
 				C92B321C1F4F591E00C165B0 /* LaunchScreen.storyboard */,
 				C92B321F1F4F591E00C165B0 /* Info.plist */,
+				C9705FAE1F534806006B4CE6 /* SWRevealViewController */,
 				C92B320E1F4F591E00C165B0 /* Supporting Files */,
 			);
 			path = "Brixham One";
@@ -95,6 +99,15 @@
 				C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C9705FAE1F534806006B4CE6 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9705FAF1F534806006B4CE6 /* SWRevealViewController.h */,
+				C9705FB01F534806006B4CE6 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +186,7 @@
 				C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */,
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
+				C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
