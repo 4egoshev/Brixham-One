@@ -18,6 +18,7 @@
 		C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FB01F534806006B4CE6 /* SWRevealViewController.m */; };
 		C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F05071F547E9A000CB5ED /* BarsViewController.m */; };
 		C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050A1F5482F2000CB5ED /* LineViewController.m */; };
+		C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050D1F5493F6000CB5ED /* PieViewController.m */; };
 		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		C97F05071F547E9A000CB5ED /* BarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarsViewController.m; sourceTree = "<group>"; };
 		C97F05091F5482F1000CB5ED /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
 		C97F050A1F5482F2000CB5ED /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
+		C97F050C1F5493F6000CB5ED /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
+		C97F050D1F5493F6000CB5ED /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				C97F05071F547E9A000CB5ED /* BarsViewController.m */,
 				C97F05091F5482F1000CB5ED /* LineViewController.h */,
 				C97F050A1F5482F2000CB5ED /* LineViewController.m */,
+				C97F050C1F5493F6000CB5ED /* PieViewController.h */,
+				C97F050D1F5493F6000CB5ED /* PieViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
+				C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */,
 				C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */,
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
