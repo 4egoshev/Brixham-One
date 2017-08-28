@@ -16,9 +16,15 @@
 		C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32421F4F59CF00C165B0 /* ListTableViewController.m */; };
 		C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */; };
 		C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FB01F534806006B4CE6 /* SWRevealViewController.m */; };
+		C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F05071F547E9A000CB5ED /* BarsViewController.m */; };
+		C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050A1F5482F2000CB5ED /* LineViewController.m */; };
+		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A427D8D32E39ACE47F4C864 /* Pods-Brixham One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.release.xcconfig"; sourceTree = "<group>"; };
+		BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Brixham One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75C8FA8F0FDD54897E762B2 /* Pods-Brixham One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.debug.xcconfig"; sourceTree = "<group>"; };
 		C92B320B1F4F591E00C165B0 /* Brixham One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brixham One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92B320F1F4F591E00C165B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92B32111F4F591E00C165B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,6 +41,10 @@
 		C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
 		C9705FAF1F534806006B4CE6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C9705FB01F534806006B4CE6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C97F05061F547E9A000CB5ED /* BarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarsViewController.h; sourceTree = "<group>"; };
+		C97F05071F547E9A000CB5ED /* BarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarsViewController.m; sourceTree = "<group>"; };
+		C97F05091F5482F1000CB5ED /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
+		C97F050A1F5482F2000CB5ED /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,17 +52,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B5F27C51EB0AD9892ABE310 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C75C8FA8F0FDD54897E762B2 /* Pods-Brixham One.debug.xcconfig */,
+				8A427D8D32E39ACE47F4C864 /* Pods-Brixham One.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AECD8D1ACA2E0670C053FFAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C92B32021F4F591C00C165B0 = {
 			isa = PBXGroup;
 			children = (
 				C92B320D1F4F591E00C165B0 /* Brixham One */,
 				C92B320C1F4F591E00C165B0 /* Products */,
+				0B5F27C51EB0AD9892ABE310 /* Pods */,
+				AECD8D1ACA2E0670C053FFAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +127,10 @@
 				C92B32421F4F59CF00C165B0 /* ListTableViewController.m */,
 				C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */,
 				C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */,
+				C97F05061F547E9A000CB5ED /* BarsViewController.h */,
+				C97F05071F547E9A000CB5ED /* BarsViewController.m */,
+				C97F05091F5482F1000CB5ED /* LineViewController.h */,
+				C97F050A1F5482F2000CB5ED /* LineViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -117,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C92B32221F4F591E00C165B0 /* Build configuration list for PBXNativeTarget "Brixham One" */;
 			buildPhases = (
+				94F721768C0E35218432DC49 /* [CP] Check Pods Manifest.lock */,
 				C92B32071F4F591D00C165B0 /* Sources */,
 				C92B32081F4F591D00C165B0 /* Frameworks */,
 				C92B32091F4F591D00C165B0 /* Resources */,
+				B07C1ED34ACB9A23DB8B024D /* [CP] Embed Pods Frameworks */,
+				183C9F59DEA6F4935AA753FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,16 +213,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		183C9F59DEA6F4935AA753FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94F721768C0E35218432DC49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B07C1ED34ACB9A23DB8B024D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C92B32071F4F591D00C165B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
+				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
 				C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */,
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
+				C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */,
 				C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +383,7 @@
 		};
 		C92B32231F4F591E00C165B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C75C8FA8F0FDD54897E762B2 /* Pods-Brixham One.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Brixham One/Info.plist";
@@ -307,6 +395,7 @@
 		};
 		C92B32241F4F591E00C165B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A427D8D32E39ACE47F4C864 /* Pods-Brixham One.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Brixham One/Info.plist";

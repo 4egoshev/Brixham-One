@@ -1,0 +1,21 @@
+PODS:
+  - drCharts (1.4)
+
+DEPENDENCIES:
+  - drCharts (from `https://github.com/Zomato/DR-charts.git`)
+
+EXTERNAL SOURCES:
+  drCharts:
+    :git: https://github.com/Zomato/DR-charts.git
+
+CHECKOUT OPTIONS:
+  drCharts:
+    :commit: 7515365aa0ccb0c5922b35f0fae6fcad5911cc14
+    :git: https://github.com/Zomato/DR-charts.git
+
+SPEC CHECKSUMS:
+  drCharts: fd568784a514819ea7af12aabdd67e00ac359370
+
+PODFILE CHECKSUM: f43515c6cd989730a697afac3ec7892df0529484
+
+COCOAPODS: 1.2.1

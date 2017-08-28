@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06F6E892A4BFE1E967E413E2C4C7F6E3 /* CircularChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 742EBE41D9135CF7635D5A50B66C6CE4 /* CircularChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074FB7E58DE05B6B73B1D48A9145F669 /* DrGraphs.h in Headers */ = {isa = PBXBuildFile; fileRef = 510700681AAEB6B5DAEFE13CE1069F2F /* DrGraphs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10A6222E8EDD5CC31E89D9150DA8009F /* PieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 59652BC996A02AAB5F09B93EC28F650E /* PieChart.m */; };
+		2322016D30D8C72B8C57FEF03F60C9A2 /* MultiLineGraphView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B847CDC8D0CF305B2C4760592C06D6A /* MultiLineGraphView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		257B79ADF4981AD2A1D469FAFE34BE65 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 93AAA881B4C6B615F50F9A7A6F34557D /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		442F6786B4689B366E8F209D0C5A252E /* BarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E2D166FA409ECE93C51601E2515AB /* BarChart.m */; };
+		49429A65D9D7A11E3F679BBEBD7B63DF /* Pods-Brixham One-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E1BAC1C43D1DF9F05397C4C2C20914 /* Pods-Brixham One-dummy.m */; };
+		541A6B404A03BED909ED10490BFBD77B /* HorizontalStackBarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBF6EB32C2BD7FE620278037836A07F /* HorizontalStackBarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68B704263643D0EC4AE20F445ACA3AF6 /* BarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B5EE3A56778CA5338ACE70F9ABF3AE /* BarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DBA4438DF563292F0668610CDCAD54A /* LineGraphMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1EB0EC0D52A1E769A0FC1BAD3DB063 /* LineGraphMarker.m */; };
+		8104AFF88EE6BB3E5738934FE3A46608 /* DRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A345EB9B26D75A1E92003356E1B30E /* DRScrollView.m */; };
+		8C9C624105DB3561A623B8AF5DEFC198 /* LegendView.h in Headers */ = {isa = PBXBuildFile; fileRef = 68EA17C0A79098C7CA63EA39415BF903 /* LegendView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91D1B5D4ABE56591E03F9B97B7AE3F58 /* drCharts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FC9A675ED5418CD62E40C2BFDDBAA /* drCharts-dummy.m */; };
+		95F3A940C3FFE61F342823D5A5959812 /* HorizontalStackBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA3E5FFDEFCCE7A555F102ECE5C76F /* HorizontalStackBarChart.m */; };
+		96ECBBE85011259A579888770A14316A /* LineGraphMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B2329FE2BDAE766C03E010958B76F01 /* LineGraphMarker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A75BE2E912998D6E3E5F866367D0613D /* PieChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC9B3E19EAC37F942557F638E742805 /* PieChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B14522A43760984271FD93BD2C571254 /* CircularChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 851E64F1A866371FF91A6065158F5367 /* CircularChart.m */; };
+		B484E2420E602E57D470860B17FA0B94 /* LegendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F65A6209B5538E42840C26475BB94 /* LegendView.m */; };
+		B4F45281E6C5D1EA48454C8A4E7CA7D1 /* DRScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 794448B59F7F87F7BE2C9C6884B2A737 /* DRScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB763FBEC5BFCC7BA5BE162F0C6906CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		CFDC0659D00959B4E0B1B733C86CF035 /* MultiLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C992F241DCECA6BD85B1195A9718D /* MultiLineGraphView.m */; };
+		DC9CE9A8EA026E0D8286F50E71E513F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83E188806C7819CBE080C0FA2500814D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3CD20169379066A6CB49B68E201DFE5;
+			remoteInfo = drCharts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11FDAC7C6FF67410DB4A85640DD67E00 /* drCharts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = drCharts.xcconfig; sourceTree = "<group>"; };
+		171F65A6209B5538E42840C26475BB94 /* LegendView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LegendView.m; path = "dr-Charts/Classes/Legend/LegendView.m"; sourceTree = "<group>"; };
+		17E1BAC1C43D1DF9F05397C4C2C20914 /* Pods-Brixham One-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Brixham One-dummy.m"; sourceTree = "<group>"; };
+		1C9C992F241DCECA6BD85B1195A9718D /* MultiLineGraphView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MultiLineGraphView.m; path = "dr-Charts/Classes/LineChart/MultiLineGraphView.m"; sourceTree = "<group>"; };
+		250FE3FADFDBC49AD08766BBBE1A1E24 /* Pods-Brixham One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Brixham One.debug.xcconfig"; sourceTree = "<group>"; };
+		2B2329FE2BDAE766C03E010958B76F01 /* LineGraphMarker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LineGraphMarker.h; path = "dr-Charts/Classes/LineChart/LineGraphMarker.h"; sourceTree = "<group>"; };
+		2B3E2D166FA409ECE93C51601E2515AB /* BarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BarChart.m; path = "dr-Charts/Classes/BarChart/BarChart.m"; sourceTree = "<group>"; };
+		2B847CDC8D0CF305B2C4760592C06D6A /* MultiLineGraphView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MultiLineGraphView.h; path = "dr-Charts/Classes/LineChart/MultiLineGraphView.h"; sourceTree = "<group>"; };
+		3EC9B3E19EAC37F942557F638E742805 /* PieChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PieChart.h; path = "dr-Charts/Classes/PieChart/PieChart.h"; sourceTree = "<group>"; };
+		402B6ABBD3869F31A6C94F9AF6F326F8 /* Pods-Brixham One-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Brixham One-acknowledgements.plist"; sourceTree = "<group>"; };
+		47FF14223BC5A1A2DF23BFEF308D6DA9 /* Pods-Brixham One-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Brixham One-frameworks.sh"; sourceTree = "<group>"; };
+		4CC87D6DDC366C31DF8F238F8E7B6175 /* libPods-Brixham One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Brixham One.a"; path = "libPods-Brixham One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		510700681AAEB6B5DAEFE13CE1069F2F /* DrGraphs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DrGraphs.h; path = "dr-Charts/Classes/DrGraphs.h"; sourceTree = "<group>"; };
+		57D75EBB7F66178A7A4B0D7FF0801811 /* Pods-Brixham One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Brixham One.release.xcconfig"; sourceTree = "<group>"; };
+		59652BC996A02AAB5F09B93EC28F650E /* PieChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PieChart.m; path = "dr-Charts/Classes/PieChart/PieChart.m"; sourceTree = "<group>"; };
+		5CCA3E5FFDEFCCE7A555F102ECE5C76F /* HorizontalStackBarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HorizontalStackBarChart.m; path = "dr-Charts/Classes/HorizontalStackChart/HorizontalStackBarChart.m"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		68EA17C0A79098C7CA63EA39415BF903 /* LegendView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LegendView.h; path = "dr-Charts/Classes/Legend/LegendView.h"; sourceTree = "<group>"; };
+		6A1EB0EC0D52A1E769A0FC1BAD3DB063 /* LineGraphMarker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LineGraphMarker.m; path = "dr-Charts/Classes/LineChart/LineGraphMarker.m"; sourceTree = "<group>"; };
+		742EBE41D9135CF7635D5A50B66C6CE4 /* CircularChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CircularChart.h; path = "dr-Charts/Classes/CircularChart/CircularChart.h"; sourceTree = "<group>"; };
+		794448B59F7F87F7BE2C9C6884B2A737 /* DRScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRScrollView.h; path = "dr-Charts/Classes/DRScrollView.h"; sourceTree = "<group>"; };
+		84B5EE3A56778CA5338ACE70F9ABF3AE /* BarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarChart.h; path = "dr-Charts/Classes/BarChart/BarChart.h"; sourceTree = "<group>"; };
+		851E64F1A866371FF91A6065158F5367 /* CircularChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CircularChart.m; path = "dr-Charts/Classes/CircularChart/CircularChart.m"; sourceTree = "<group>"; };
+		91A345EB9B26D75A1E92003356E1B30E /* DRScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRScrollView.m; path = "dr-Charts/Classes/DRScrollView.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93AAA881B4C6B615F50F9A7A6F34557D /* Constants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "dr-Charts/Classes/Constants.h"; sourceTree = "<group>"; };
+		A00FC9A675ED5418CD62E40C2BFDDBAA /* drCharts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "drCharts-dummy.m"; sourceTree = "<group>"; };
+		A64264EA766ABE3FCC95B01ED3DBB4AD /* libdrCharts.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libdrCharts.a; path = libdrCharts.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C52EFE6EEEC2C749F053889CFA82CC67 /* Pods-Brixham One-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Brixham One-resources.sh"; sourceTree = "<group>"; };
+		DC17E73F27C194132648CA7086E2884B /* drCharts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "drCharts-prefix.pch"; sourceTree = "<group>"; };
+		DEBF6EB32C2BD7FE620278037836A07F /* HorizontalStackBarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HorizontalStackBarChart.h; path = "dr-Charts/Classes/HorizontalStackChart/HorizontalStackBarChart.h"; sourceTree = "<group>"; };
+		EC06A748E09FD28F468FBB7C39F5F3F7 /* Pods-Brixham One-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Brixham One-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71A035415CAFE1BD9BFF4CFD6CFCD5F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB763FBEC5BFCC7BA5BE162F0C6906CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F54CF028D6201953E9A1A4AE3FB7957 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9CE9A8EA026E0D8286F50E71E513F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		314B90E81D555A7562952180D05F536E /* drCharts */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EE3A56778CA5338ACE70F9ABF3AE /* BarChart.h */,
+				2B3E2D166FA409ECE93C51601E2515AB /* BarChart.m */,
+				742EBE41D9135CF7635D5A50B66C6CE4 /* CircularChart.h */,
+				851E64F1A866371FF91A6065158F5367 /* CircularChart.m */,
+				93AAA881B4C6B615F50F9A7A6F34557D /* Constants.h */,
+				510700681AAEB6B5DAEFE13CE1069F2F /* DrGraphs.h */,
+				794448B59F7F87F7BE2C9C6884B2A737 /* DRScrollView.h */,
+				91A345EB9B26D75A1E92003356E1B30E /* DRScrollView.m */,
+				DEBF6EB32C2BD7FE620278037836A07F /* HorizontalStackBarChart.h */,
+				5CCA3E5FFDEFCCE7A555F102ECE5C76F /* HorizontalStackBarChart.m */,
+				68EA17C0A79098C7CA63EA39415BF903 /* LegendView.h */,
+				171F65A6209B5538E42840C26475BB94 /* LegendView.m */,
+				2B2329FE2BDAE766C03E010958B76F01 /* LineGraphMarker.h */,
+				6A1EB0EC0D52A1E769A0FC1BAD3DB063 /* LineGraphMarker.m */,
+				2B847CDC8D0CF305B2C4760592C06D6A /* MultiLineGraphView.h */,
+				1C9C992F241DCECA6BD85B1195A9718D /* MultiLineGraphView.m */,
+				3EC9B3E19EAC37F942557F638E742805 /* PieChart.h */,
+				59652BC996A02AAB5F09B93EC28F650E /* PieChart.m */,
+				E02B275D048944B4CC6A17EBE6C88B88 /* Support Files */,
+			);
+			name = drCharts;
+			path = drCharts;
+			sourceTree = "<group>";
+		};
+		3DDAF4A0AE6FE996C11758C388454395 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8984306563B8AD2DC67FD7FBB11899A9 /* Pods-Brixham One */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5F018356B9AE87542558AEBEB2660EA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				314B90E81D555A7562952180D05F536E /* drCharts */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5F018356B9AE87542558AEBEB2660EA3 /* Pods */,
+				AC8D3E75CD5CB92289D0EC564B5109D6 /* Products */,
+				3DDAF4A0AE6FE996C11758C388454395 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8984306563B8AD2DC67FD7FBB11899A9 /* Pods-Brixham One */ = {
+			isa = PBXGroup;
+			children = (
+				EC06A748E09FD28F468FBB7C39F5F3F7 /* Pods-Brixham One-acknowledgements.markdown */,
+				402B6ABBD3869F31A6C94F9AF6F326F8 /* Pods-Brixham One-acknowledgements.plist */,
+				17E1BAC1C43D1DF9F05397C4C2C20914 /* Pods-Brixham One-dummy.m */,
+				47FF14223BC5A1A2DF23BFEF308D6DA9 /* Pods-Brixham One-frameworks.sh */,
+				C52EFE6EEEC2C749F053889CFA82CC67 /* Pods-Brixham One-resources.sh */,
+				250FE3FADFDBC49AD08766BBBE1A1E24 /* Pods-Brixham One.debug.xcconfig */,
+				57D75EBB7F66178A7A4B0D7FF0801811 /* Pods-Brixham One.release.xcconfig */,
+			);
+			name = "Pods-Brixham One";
+			path = "Target Support Files/Pods-Brixham One";
+			sourceTree = "<group>";
+		};
+		AC8D3E75CD5CB92289D0EC564B5109D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A64264EA766ABE3FCC95B01ED3DBB4AD /* libdrCharts.a */,
+				4CC87D6DDC366C31DF8F238F8E7B6175 /* libPods-Brixham One.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E02B275D048944B4CC6A17EBE6C88B88 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				11FDAC7C6FF67410DB4A85640DD67E00 /* drCharts.xcconfig */,
+				A00FC9A675ED5418CD62E40C2BFDDBAA /* drCharts-dummy.m */,
+				DC17E73F27C194132648CA7086E2884B /* drCharts-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/drCharts";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		71315E817E9843FCAD951ACD5937FAA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68B704263643D0EC4AE20F445ACA3AF6 /* BarChart.h in Headers */,
+				06F6E892A4BFE1E967E413E2C4C7F6E3 /* CircularChart.h in Headers */,
+				257B79ADF4981AD2A1D469FAFE34BE65 /* Constants.h in Headers */,
+				074FB7E58DE05B6B73B1D48A9145F669 /* DrGraphs.h in Headers */,
+				B4F45281E6C5D1EA48454C8A4E7CA7D1 /* DRScrollView.h in Headers */,
+				541A6B404A03BED909ED10490BFBD77B /* HorizontalStackBarChart.h in Headers */,
+				8C9C624105DB3561A623B8AF5DEFC198 /* LegendView.h in Headers */,
+				96ECBBE85011259A579888770A14316A /* LineGraphMarker.h in Headers */,
+				2322016D30D8C72B8C57FEF03F60C9A2 /* MultiLineGraphView.h in Headers */,
+				A75BE2E912998D6E3E5F866367D0613D /* PieChart.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6C099391AEBF1B2555005DBEC8B10AF1 /* Pods-Brixham One */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84360A4830E405783266A924B3F58168 /* Build configuration list for PBXNativeTarget "Pods-Brixham One" */;
+			buildPhases = (
+				C387D4E073B62A2AAC04991771C3B767 /* Sources */,
+				7F54CF028D6201953E9A1A4AE3FB7957 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88D3DAC64E196455AB7F9C9D79C916C0 /* PBXTargetDependency */,
+			);
+			name = "Pods-Brixham One";
+			productName = "Pods-Brixham One";
+			productReference = 4CC87D6DDC366C31DF8F238F8E7B6175 /* libPods-Brixham One.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E3CD20169379066A6CB49B68E201DFE5 /* drCharts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29BA61AF4FCB2E42F3600A60728E8117 /* Build configuration list for PBXNativeTarget "drCharts" */;
+			buildPhases = (
+				7B6A0BC405E120FE812144CA3CB1700A /* Sources */,
+				71A035415CAFE1BD9BFF4CFD6CFCD5F9 /* Frameworks */,
+				71315E817E9843FCAD951ACD5937FAA4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = drCharts;
+			productName = drCharts;
+			productReference = A64264EA766ABE3FCC95B01ED3DBB4AD /* libdrCharts.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AC8D3E75CD5CB92289D0EC564B5109D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3CD20169379066A6CB49B68E201DFE5 /* drCharts */,
+				6C099391AEBF1B2555005DBEC8B10AF1 /* Pods-Brixham One */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B6A0BC405E120FE812144CA3CB1700A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442F6786B4689B366E8F209D0C5A252E /* BarChart.m in Sources */,
+				B14522A43760984271FD93BD2C571254 /* CircularChart.m in Sources */,
+				91D1B5D4ABE56591E03F9B97B7AE3F58 /* drCharts-dummy.m in Sources */,
+				8104AFF88EE6BB3E5738934FE3A46608 /* DRScrollView.m in Sources */,
+				95F3A940C3FFE61F342823D5A5959812 /* HorizontalStackBarChart.m in Sources */,
+				B484E2420E602E57D470860B17FA0B94 /* LegendView.m in Sources */,
+				6DBA4438DF563292F0668610CDCAD54A /* LineGraphMarker.m in Sources */,
+				CFDC0659D00959B4E0B1B733C86CF035 /* MultiLineGraphView.m in Sources */,
+				10A6222E8EDD5CC31E89D9150DA8009F /* PieChart.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C387D4E073B62A2AAC04991771C3B767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49429A65D9D7A11E3F679BBEBD7B63DF /* Pods-Brixham One-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88D3DAC64E196455AB7F9C9D79C916C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = drCharts;
+			target = E3CD20169379066A6CB49B68E201DFE5 /* drCharts */;
+			targetProxy = 83E188806C7819CBE080C0FA2500814D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ECD5D5099413866A998E861B25E46BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57D75EBB7F66178A7A4B0D7FF0801811 /* Pods-Brixham One.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		55B7469AE49C48CF284CF64A00CE69C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11FDAC7C6FF67410DB4A85640DD67E00 /* drCharts.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/drCharts/drCharts-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8D3608FDA90F99FA3D1CF84660DF956C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11FDAC7C6FF67410DB4A85640DD67E00 /* drCharts.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/drCharts/drCharts-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CA201C07EF78E39F61EA9BE4D371E2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 250FE3FADFDBC49AD08766BBBE1A1E24 /* Pods-Brixham One.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29BA61AF4FCB2E42F3600A60728E8117 /* Build configuration list for PBXNativeTarget "drCharts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D3608FDA90F99FA3D1CF84660DF956C /* Debug */,
+				55B7469AE49C48CF284CF64A00CE69C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163D87BE96A63549B0EACF1CC31A2E90 /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84360A4830E405783266A924B3F58168 /* Build configuration list for PBXNativeTarget "Pods-Brixham One" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA201C07EF78E39F61EA9BE4D371E2C9 /* Debug */,
+				0ECD5D5099413866A998E861B25E46BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
