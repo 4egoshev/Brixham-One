@@ -19,6 +19,8 @@
 		C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F05071F547E9A000CB5ED /* BarsViewController.m */; };
 		C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050A1F5482F2000CB5ED /* LineViewController.m */; };
 		C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050D1F5493F6000CB5ED /* PieViewController.m */; };
+		C97F054D1F55B722000CB5ED /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F054C1F55B722000CB5ED /* ServerManager.m */; };
+		C97F05501F55E1BA000CB5ED /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F054F1F55E1BA000CB5ED /* Person.m */; };
 		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,10 @@
 		C97F050A1F5482F2000CB5ED /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 		C97F050C1F5493F6000CB5ED /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
 		C97F050D1F5493F6000CB5ED /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
+		C97F054B1F55B722000CB5ED /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
+		C97F054C1F55B722000CB5ED /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
+		C97F054E1F55E1BA000CB5ED /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		C97F054F1F55E1BA000CB5ED /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 			children = (
 				C92B32111F4F591E00C165B0 /* AppDelegate.h */,
 				C92B32121F4F591E00C165B0 /* AppDelegate.m */,
+				C97F05511F55E1C6000CB5ED /* Model */,
+				C97F054A1F55B6E7000CB5ED /* Net */,
 				C92B32481F4F59D900C165B0 /* Controllers */,
 				C92B323D1F4F59BB00C165B0 /* Main.storyboard */,
 				C92B321A1F4F591E00C165B0 /* Assets.xcassets */,
@@ -147,6 +155,24 @@
 				C9705FB01F534806006B4CE6 /* SWRevealViewController.m */,
 			);
 			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		C97F054A1F55B6E7000CB5ED /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				C97F054B1F55B722000CB5ED /* ServerManager.h */,
+				C97F054C1F55B722000CB5ED /* ServerManager.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+		C97F05511F55E1C6000CB5ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C97F054E1F55E1BA000CB5ED /* Person.h */,
+				C97F054F1F55E1BA000CB5ED /* Person.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97F054D1F55B722000CB5ED /* ServerManager.m in Sources */,
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
+				C97F05501F55E1BA000CB5ED /* Person.m in Sources */,
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
 				C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */,

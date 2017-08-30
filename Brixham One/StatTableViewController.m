@@ -10,6 +10,9 @@
 #import "ListTableViewController.h"
 #import "DateViewController.h"
 #import "SWRevealViewController.h"
+#import "ServerManager.h"
+#import <AFNetworking.h>
+#import "Person.h"
 
 @interface StatTableViewController () <ListDelegate, DateDelegate>
 
@@ -28,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
+    self.namesArray = [NSMutableArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
     self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
 
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -38,6 +41,11 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+
+
+//Server response
+
+    
     
 }
 
@@ -52,7 +60,6 @@
         self.array = self.sitesArray;
     }
 
-
     if (!self.dateArray) {
         self.navigationItem.title = @"Сегодня";
     } else {
@@ -60,11 +67,45 @@
     }
 }
 
-- (IBAction)reloadAction:(id)sender {
-    NSLog(@"Reload");
-    [self.tableView reloadData];
-}
+#pragma mark - Server
 
+- (void)getRanksFromServer {
+
+    NSDate *begin = self.dateArray[0];
+    NSDate *end = self.dateArray[1];
+
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"beginDate",begin,
+                            @"endDate",end,
+                            @"site",self.object, nil];
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"API"
+      parameters:params
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+
+             NSArray *responseArray = responseObject[@"response"];
+
+             for (NSDictionary *dict in responseObject) {
+                 NSArray *personsArray = [dict objectForKey:@""];
+                 NSMutableArray *array = [NSMutableArray new];
+
+                 for (int i=0; i<personsArray.count; i++) {
+                     Person *person = [Person new];
+                     person.name = personsArray[i][@""];
+                     person.ranks = personsArray[i][@""];
+                     person.date = dict[@""];
+
+                     [array addObject:person];
+
+                 }
+             }
+
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             <#code#>
+         }];
+}
 
 #pragma mark - Table view data source
 

@@ -1,7 +1,23 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - drCharts (1.4)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.0)
   - drCharts (from `https://github.com/Zomato/DR-charts.git`)
 
 EXTERNAL SOURCES:
@@ -14,8 +30,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Zomato/DR-charts.git
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   drCharts: fd568784a514819ea7af12aabdd67e00ac359370
 
-PODFILE CHECKSUM: f43515c6cd989730a697afac3ec7892df0529484
+PODFILE CHECKSUM: 1cb4411460d88287131d2c41d024a7da090680a4
 
 COCOAPODS: 1.2.1
