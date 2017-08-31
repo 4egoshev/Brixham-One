@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
 
-@interface StatTableViewController : UITableViewController
+@interface StatTableViewController : MasterViewController
 
 @end

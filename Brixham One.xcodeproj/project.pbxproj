@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C905A4D61F58978A003FFB1E /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A4D51F58978A003FFB1E /* CoreDataManager.m */; };
+		C905A4FF1F589C8D003FFB1E /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A4FE1F589C8D003FFB1E /* MasterViewController.m */; };
+		C905A5051F58A10F003FFB1E /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C905A5031F58A10F003FFB1E /* CoreDataModel.xcdatamodeld */; };
 		C92B32101F4F591E00C165B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B320F1F4F591E00C165B0 /* main.m */; };
 		C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32121F4F591E00C165B0 /* AppDelegate.m */; };
 		C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92B321A1F4F591E00C165B0 /* Assets.xcassets */; };
@@ -26,6 +29,11 @@
 		8A427D8D32E39ACE47F4C864 /* Pods-Brixham One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.release.xcconfig"; sourceTree = "<group>"; };
 		BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Brixham One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75C8FA8F0FDD54897E762B2 /* Pods-Brixham One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.debug.xcconfig"; sourceTree = "<group>"; };
+		C905A4D41F58978A003FFB1E /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		C905A4D51F58978A003FFB1E /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		C905A4FD1F589C8D003FFB1E /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = ../../Universities/Universities/MasterViewController.h; sourceTree = "<group>"; };
+		C905A4FE1F589C8D003FFB1E /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = ../../Universities/Universities/MasterViewController.m; sourceTree = "<group>"; };
+		C905A5041F58A10F003FFB1E /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C92B320B1F4F591E00C165B0 /* Brixham One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brixham One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92B320F1F4F591E00C165B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92B32111F4F591E00C165B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,11 +110,14 @@
 			children = (
 				C92B32111F4F591E00C165B0 /* AppDelegate.h */,
 				C92B32121F4F591E00C165B0 /* AppDelegate.m */,
+				C905A4D41F58978A003FFB1E /* CoreDataManager.h */,
+				C905A4D51F58978A003FFB1E /* CoreDataManager.m */,
 				C92B32481F4F59D900C165B0 /* Controllers */,
 				C92B323D1F4F59BB00C165B0 /* Main.storyboard */,
 				C92B321A1F4F591E00C165B0 /* Assets.xcassets */,
 				C92B321C1F4F591E00C165B0 /* LaunchScreen.storyboard */,
 				C92B321F1F4F591E00C165B0 /* Info.plist */,
+				C905A5031F58A10F003FFB1E /* CoreDataModel.xcdatamodeld */,
 				C9705FAE1F534806006B4CE6 /* SWRevealViewController */,
 				C92B320E1F4F591E00C165B0 /* Supporting Files */,
 			);
@@ -124,6 +135,8 @@
 		C92B32481F4F59D900C165B0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C905A4FD1F589C8D003FFB1E /* MasterViewController.h */,
+				C905A4FE1F589C8D003FFB1E /* MasterViewController.m */,
 				C92B323F1F4F59CF00C165B0 /* DateViewController.h */,
 				C92B32401F4F59CF00C165B0 /* DateViewController.m */,
 				C92B32411F4F59CF00C165B0 /* ListTableViewController.h */,
@@ -273,9 +286,12 @@
 			files = (
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
+				C905A5051F58A10F003FFB1E /* CoreDataModel.xcdatamodeld in Sources */,
+				C905A4D61F58978A003FFB1E /* CoreDataManager.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
 				C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */,
 				C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */,
+				C905A4FF1F589C8D003FFB1E /* MasterViewController.m in Sources */,
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
 				C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */,
@@ -433,6 +449,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C905A5031F58A10F003FFB1E /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C905A5041F58A10F003FFB1E /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = C905A5041F58A10F003FFB1E /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C92B32031F4F591D00C165B0 /* Project object */;
 }
