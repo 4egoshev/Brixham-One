@@ -10,6 +10,8 @@
 #import "ListTableViewController.h"
 #import "DateViewController.h"
 #import "SWRevealViewController.h"
+#import "Person+CoreDataClass.h"
+#import "CoreDataManager.h"
 
 @interface StatTableViewController () <ListDelegate, DateDelegate>
 
@@ -26,10 +28,21 @@
 
 @implementation StatTableViewController
 
+@synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize managedObjectContext = _managedObjectContext;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
-    self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
+//    self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
+//    self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
+
+    Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person"
+                                                   inManagedObjectContext:_managedObjectContext];
+    person.name = @"Путин";
+//    [[CoreDataManager sharedManager] saveContext];
+    [self.managedObjectContext save:nil];
+
 
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -60,14 +73,46 @@
     }
 }
 
-- (IBAction)reloadAction:(id)sender {
-    NSLog(@"Reload");
-    [self.tableView reloadData];
-}
+#pragma mark - Fetched results controller
 
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Person"];
+    [fetchRequest setFetchBatchSize:20];
+
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+
+    NSFetchedResultsController *aFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:_managedObjectContext
+                                          sectionNameKeyPath:nil
+                                                   cacheName:nil];
+
+    aFetchedResultsController.delegate = self;
+
+    NSError *error = nil;
+    if (![aFetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        abort();
+    }
+
+    _fetchedResultsController = aFetchedResultsController;
+    return _fetchedResultsController;
+}
 
 #pragma mark - Table view data source
 
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
+    Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = person.name;
+}
+
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -84,6 +129,7 @@
 
     return cell;
 }
+*/
 
 #pragma mark - Navigation
 

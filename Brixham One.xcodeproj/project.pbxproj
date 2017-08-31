@@ -10,8 +10,9 @@
 		C905A4D61F58978A003FFB1E /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A4D51F58978A003FFB1E /* CoreDataManager.m */; };
 		C905A4FF1F589C8D003FFB1E /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A4FE1F589C8D003FFB1E /* MasterViewController.m */; };
 		C905A5051F58A10F003FFB1E /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C905A5031F58A10F003FFB1E /* CoreDataModel.xcdatamodeld */; };
-		C905A51D1F58A891003FFB1E /* Person+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A51A1F58A891003FFB1E /* Person+CoreDataClass.m */; };
-		C905A51E1F58A891003FFB1E /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A51C1F58A891003FFB1E /* Person+CoreDataProperties.m */; };
+		C905A5221F58B52C003FFB1E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C905A5211F58B52C003FFB1E /* CoreData.framework */; };
+		C905A52D1F58B656003FFB1E /* Person+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A52A1F58B656003FFB1E /* Person+CoreDataClass.m */; };
+		C905A52E1F58B656003FFB1E /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A52C1F58B656003FFB1E /* Person+CoreDataProperties.m */; };
 		C92B32101F4F591E00C165B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B320F1F4F591E00C165B0 /* main.m */; };
 		C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32121F4F591E00C165B0 /* AppDelegate.m */; };
 		C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92B321A1F4F591E00C165B0 /* Assets.xcassets */; };
@@ -36,10 +37,12 @@
 		C905A4FD1F589C8D003FFB1E /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = ../../Universities/Universities/MasterViewController.h; sourceTree = "<group>"; };
 		C905A4FE1F589C8D003FFB1E /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = ../../Universities/Universities/MasterViewController.m; sourceTree = "<group>"; };
 		C905A5041F58A10F003FFB1E /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		C905A5191F58A891003FFB1E /* Person+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
-		C905A51A1F58A891003FFB1E /* Person+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
-		C905A51B1F58A891003FFB1E /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
-		C905A51C1F58A891003FFB1E /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C905A51F1F58B4F8003FFB1E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C905A5211F58B52C003FFB1E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C905A5291F58B656003FFB1E /* Person+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
+		C905A52A1F58B656003FFB1E /* Person+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
+		C905A52B1F58B656003FFB1E /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C905A52C1F58B656003FFB1E /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
 		C92B320B1F4F591E00C165B0 /* Brixham One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brixham One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92B320F1F4F591E00C165B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92B32111F4F591E00C165B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C905A5221F58B52C003FFB1E /* CoreData.framework in Frameworks */,
 				E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +92,8 @@
 		AECD8D1ACA2E0670C053FFAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C905A5211F58B52C003FFB1E /* CoreData.framework */,
+				C905A51F1F58B4F8003FFB1E /* CoreLocation.framework */,
 				BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */,
 			);
 			name = Frameworks;
@@ -96,10 +102,10 @@
 		C905A5061F58A4A8003FFB1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C905A5191F58A891003FFB1E /* Person+CoreDataClass.h */,
-				C905A51A1F58A891003FFB1E /* Person+CoreDataClass.m */,
-				C905A51B1F58A891003FFB1E /* Person+CoreDataProperties.h */,
-				C905A51C1F58A891003FFB1E /* Person+CoreDataProperties.m */,
+				C905A5291F58B656003FFB1E /* Person+CoreDataClass.h */,
+				C905A52A1F58B656003FFB1E /* Person+CoreDataClass.m */,
+				C905A52B1F58B656003FFB1E /* Person+CoreDataProperties.h */,
+				C905A52C1F58B656003FFB1E /* Person+CoreDataProperties.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C905A5051F58A10F003FFB1E /* CoreDataModel.xcdatamodeld in Sources */,
 				C905A4D61F58978A003FFB1E /* CoreDataManager.m in Sources */,
+				C905A52D1F58B656003FFB1E /* Person+CoreDataClass.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
 				C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */,
 				C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */,
@@ -314,8 +321,7 @@
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
 				C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */,
-				C905A51D1F58A891003FFB1E /* Person+CoreDataClass.m in Sources */,
-				C905A51E1F58A891003FFB1E /* Person+CoreDataProperties.m in Sources */,
+				C905A52E1F58B656003FFB1E /* Person+CoreDataProperties.m in Sources */,
 				C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
