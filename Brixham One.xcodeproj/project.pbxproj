@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C905A5311F59A319003FFB1E /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = C905A5301F59A319003FFB1E /* Site.m */; };
 		C92B32101F4F591E00C165B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B320F1F4F591E00C165B0 /* main.m */; };
 		C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32121F4F591E00C165B0 /* AppDelegate.m */; };
 		C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92B321A1F4F591E00C165B0 /* Assets.xcassets */; };
@@ -28,6 +29,8 @@
 		8A427D8D32E39ACE47F4C864 /* Pods-Brixham One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.release.xcconfig"; sourceTree = "<group>"; };
 		BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Brixham One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75C8FA8F0FDD54897E762B2 /* Pods-Brixham One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.debug.xcconfig"; sourceTree = "<group>"; };
+		C905A52F1F59A319003FFB1E /* Site.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Site.h; sourceTree = "<group>"; };
+		C905A5301F59A319003FFB1E /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Site.m; sourceTree = "<group>"; };
 		C92B320B1F4F591E00C165B0 /* Brixham One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brixham One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92B320F1F4F591E00C165B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92B32111F4F591E00C165B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 			children = (
 				C97F054E1F55E1BA000CB5ED /* Person.h */,
 				C97F054F1F55E1BA000CB5ED /* Person.m */,
+				C905A52F1F59A319003FFB1E /* Site.h */,
+				C905A5301F59A319003FFB1E /* Site.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			files = (
 				C97F054D1F55B722000CB5ED /* ServerManager.m in Sources */,
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
+				C905A5311F59A319003FFB1E /* Site.m in Sources */,
 				C97F05501F55E1BA000CB5ED /* Person.m in Sources */,
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,

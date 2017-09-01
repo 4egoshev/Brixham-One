@@ -67,16 +67,23 @@
     NSLog(@"date = %@", self.dateArray);
 
     if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
-        [[ServerManager sharedManager] getRanksForPersonDateArray:self.dateArray
-                                                         fromSite:self.object
-                                                        onSuccees:^(NSArray *ranksArray) {
-                                                            self.array = ranksArray;
-                                                        }
-                                                        onFailure:^(NSError *error) {
-                                                            NSLog(@"%@",error);
-                                                        }];
+        [[ServerManager sharedManager] getRanksForPersonForDateArray:self.dateArray
+                                                            fromSite:self.object
+                                                           onSuccees:^(NSArray *ranksArray) {
+                                                               self.array = ranksArray;
+                                                           }
+                                                            onFailure:^(NSError *error) {
+                                                                NSLog(@"%@",error.localizedDescription);
+                                                            }];
     } else {
-        self.array = self.sitesArray;
+        [[ServerManager sharedManager] getRanksForSitesForDateArray:self.dateArray
+                                                          forPerson:self.object
+                                                          onSuccees:^(NSArray *ranksArray) {
+                                                              self.array = ranksArray;
+                                                          }
+                                                          onFailure:^(NSError *error) {
+                                                              NSLog(@"%@",error.localizedDescription);
+                                                          }];
     }
 
 

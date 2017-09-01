@@ -12,8 +12,13 @@
 
 +(ServerManager *)sharedManager;
 
--(void)getRanksForPersonDateArray:(NSArray *)dateArray
-                         fromSite:(NSString *)site
+-(void)getRanksForPersonForDateArray:(NSArray *)dateArray
+                            fromSite:(NSString *)site
+                           onSuccees:(void(^)(NSArray *ranksArray))success
+                           onFailure:(void(^)(NSError *error))failure;
+
+-(void)getRanksForSitesForDateArray:(NSArray *)dateArray
+                         forPerson:(NSString *)person
                         onSuccees:(void(^)(NSArray *ranksArray))success
                         onFailure:(void(^)(NSError *error))failure;
 
