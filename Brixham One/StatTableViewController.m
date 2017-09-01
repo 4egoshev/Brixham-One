@@ -12,7 +12,6 @@
 #import "SWRevealViewController.h"
 #import "ServerManager.h"
 #import <AFNetworking.h>
-#import "Person.h"
 
 @interface StatTableViewController () <ListDelegate, DateDelegate>
 
@@ -31,8 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.namesArray = [NSMutableArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
-    self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
+//    self.namesArray = [NSMutableArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
+//    self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
 
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -52,13 +51,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
 
-    NSLog(@"date = %@", self.dateArray);
-
-    if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
-        self.array = self.namesArray;
-    } else {
-        self.array = self.sitesArray;
-    }
+    [self getRanksFromServer];
 
     if (!self.dateArray) {
         self.navigationItem.title = @"Сегодня";
@@ -71,40 +64,23 @@
 
 - (void)getRanksFromServer {
 
-    NSDate *begin = self.dateArray[0];
-    NSDate *end = self.dateArray[1];
+    NSLog(@"date = %@", self.dateArray);
 
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            @"beginDate",begin,
-                            @"endDate",end,
-                            @"site",self.object, nil];
+    if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
+        [[ServerManager sharedManager] getRanksForPersonDateArray:self.dateArray
+                                                         fromSite:self.object
+                                                        onSuccees:^(NSArray *ranksArray) {
+                                                            self.array = ranksArray;
+                                                        }
+                                                        onFailure:^(NSError *error) {
+                                                            NSLog(@"%@",error);
+                                                        }];
+    } else {
+        self.array = self.sitesArray;
+    }
 
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"API"
-      parameters:params
-         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
-             NSArray *responseArray = responseObject[@"response"];
 
-             for (NSDictionary *dict in responseObject) {
-                 NSArray *personsArray = [dict objectForKey:@""];
-                 NSMutableArray *array = [NSMutableArray new];
-
-                 for (int i=0; i<personsArray.count; i++) {
-                     Person *person = [Person new];
-                     person.name = personsArray[i][@""];
-                     person.ranks = personsArray[i][@""];
-                     person.date = dict[@""];
-
-                     [array addObject:person];
-
-                 }
-             }
-
-         }
-         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             <#code#>
-         }];
 }
 
 #pragma mark - Table view data source

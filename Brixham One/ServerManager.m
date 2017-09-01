@@ -21,40 +21,39 @@
     return manager;
 }
 
-//-(void)getRanksForPersonSinceDate:(NSDate *)begin
-//                          forDate:(NSDate *)end
-//                         fromSite:(NSString *)site
-//                        onSuccees:(void(^)(NSArray *ranksArray))success
-//                        onFailure:(void(^)(NSError *error))failure {
-//
-//    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-//                            @"beginDate",begin,
-//                            @"endDate",end,
-//                            @"site",site, nil];
-//
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    [manager GET:@"API"
-//      parameters:params
-//         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//
-//
-//
-//             for (NSDictionary *dict in responseObject) {
-//                 NSArray *personsArray = [dict objectForKey:@""];
-//                 for (int i=0; i<personsArray.count; i++) {
-//                     Person *person = [Person new];
-//                     person.name = personsArray[i][@""];
-//                     person.ranks = personsArray[i][@""];
-//                     person.date = dict[@""];
-//
-//                 }
-//             }
-//
-//         }
-//         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//             <#code#>
-//         }];
-//    
-//}
+-(void)getRanksForPersonDateArray:(NSArray *)dateArray
+                         fromSite:(NSString *)site
+                        onSuccees:(void(^)(NSArray *ranksArray))success
+                        onFailure:(void(^)(NSError *error))failure {
+
+    NSDate *begin = dateArray.firstObject;
+    NSDate *end = dateArray.lastObject;
+
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"beginDate",begin,
+                            @"endDate",end,
+                            @"site",site, nil];
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"API"
+      parameters:params
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+
+             NSArray *responseArray = responseObject[@"persons"];
+             NSMutableArray *array = [NSMutableArray new];
+
+             for (NSDictionary *dict in responseArray) {
+                 Person *person = [Person new];
+                 person.name = dict[@"name"];
+                 person.ranks = dict[@"ranks"];
+                 [array addObject:person];
+             }
+             success(array);
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             NSLog(@"%@",error);
+         }];
+    
+}
 
 @end
