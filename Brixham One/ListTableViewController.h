@@ -23,10 +23,10 @@ typedef enum {
 @interface ListTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *array;
-@property (assign, nonatomic) ListType listType;
-@property (assign, nonatomic) ContentType contentType;
 
 @property (strong, nonatomic) id<ListDelegate> delegate;
+
+- (instancetype)initWithListType:(ListType)listType andContentType:(ContentType)contentType;
 
 @end
 

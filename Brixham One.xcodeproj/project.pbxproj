@@ -59,6 +59,7 @@
 		C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseDateViewController.m; sourceTree = "<group>"; };
 		C9A169F21F5D2951000871E6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		C9A169F51F5DD1B3000871E6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +114,7 @@
 			children = (
 				C92B32111F4F591E00C165B0 /* AppDelegate.h */,
 				C92B32121F4F591E00C165B0 /* AppDelegate.m */,
+				C9A169F51F5DD1B3000871E6 /* Constants.h */,
 				C9A169E91F5C9B77000871E6 /* View */,
 				C92B32481F4F59D900C165B0 /* Controllers */,
 				C92B323D1F4F59BB00C165B0 /* Main.storyboard */,

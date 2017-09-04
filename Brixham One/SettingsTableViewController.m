@@ -9,12 +9,7 @@
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "ListTableViewController.h"
-
-#define SECOND_SECTION 1
-#define FIRST_ROW 0
-#define SECOND_ROW 1
-#define THIRD_ROW 2
-#define FOUTH_ROW 3
+#import "Constants.h"
 
 @interface SettingsTableViewController ()
 
@@ -22,6 +17,9 @@
 @property (strong, nonatomic) NSArray *sitesArray;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *siteCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *choosedNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *choosedSiteLabel;
 
@@ -39,11 +37,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    NSData *nameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"Name"];
-    self.choosedNameLabel.text = [NSKeyedUnarchiver unarchiveObjectWithData:nameData];
-    NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:@"Site"];
-    self.choosedSiteLabel.text = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
 
+    [self loadDataForRows];
 }
 
 - (void)sideBarButtonAction {
@@ -57,38 +52,54 @@
     }
 }
 
+- (void)loadDataForRows {
+
+    NSData *nameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"Name"];
+    self.choosedNameLabel.text = [NSKeyedUnarchiver unarchiveObjectWithData:nameData];
+    NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:@"Site"];
+    self.choosedSiteLabel.text = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
+
+    NSData *nameArrayData = [[NSUserDefaults standardUserDefaults] objectForKey:@"NameList"];
+    NSArray *nameArray = [NSKeyedUnarchiver unarchiveObjectWithData:nameArrayData];
+    self.nameCountLabel.text = [NSString stringWithFormat:@"%ld",nameArray.count];
+    NSData *siteArrayData = [[NSUserDefaults standardUserDefaults] objectForKey:@"SiteList"];
+    NSArray *siteArray = [NSKeyedUnarchiver unarchiveObjectWithData:siteArrayData];
+    self.siteCountLabel.text = [NSString stringWithFormat:@"%ld",siteArray.count];
+}
+
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    NSLog(@"row = %ld",indexPath.row);
-
-    ListTableViewController *lvc = [ListTableViewController new];
     if (indexPath.section == SECOND_SECTION) {
         switch (indexPath.row) {
             case FIRST_ROW:
+            {
+                ListTableViewController *lvc = [[ListTableViewController alloc] initWithListType:MultiChooseType andContentType:NameType];
                 lvc.array = self.namesArray;
-                lvc.listType = MultiChooseType;
-                lvc.contentType = NameType;
                 [self.navigationController pushViewController:lvc animated:YES];
+            }
                 break;
             case SECOND_ROW:
+            {
+                ListTableViewController *lvc = [[ListTableViewController alloc] initWithListType:SingleChooseType andContentType:NameType];
                 lvc.array = self.namesArray;
-                lvc.listType = SingleChooseType;
-                lvc.contentType = NameType;
                 [self.navigationController pushViewController:lvc animated:YES];
+            }
                 break;
             case THIRD_ROW:
-                lvc.array = self.sitesArray;
-                lvc.listType = MultiChooseType;
-                lvc.contentType = SiteType;
+            {
+                ListTableViewController *lvc = [[ListTableViewController alloc] initWithListType:MultiChooseType andContentType:SiteType];
+                lvc.array = self.namesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
+            }
                 break;
             case FOUTH_ROW:
-                lvc.array = self.sitesArray;
-                lvc.listType = SingleChooseType;
-                lvc.contentType = SiteType;
+            {
+                ListTableViewController *lvc = [[ListTableViewController alloc] initWithListType:SingleChooseType andContentType:SiteType];
+                lvc.array = self.namesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
+            }
                 break;
             default:
                 break;
