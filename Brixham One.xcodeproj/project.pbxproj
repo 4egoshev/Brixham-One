@@ -22,6 +22,7 @@
 		C9A169EB1F5C9C04000871E6 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */; };
 		C9A169EE1F5C9F4C000871E6 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */; };
 		C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */; };
+		C9A169F41F5D2951000871E6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */; };
 		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
 		C9A169EF1F5CA109000871E6 /* ChooseDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseDateViewController.h; sourceTree = "<group>"; };
 		C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseDateViewController.m; sourceTree = "<group>"; };
+		C9A169F21F5D2951000871E6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				C97F050D1F5493F6000CB5ED /* PieViewController.m */,
 				C9A169EF1F5CA109000871E6 /* ChooseDateViewController.h */,
 				C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */,
+				C9A169F21F5D2951000871E6 /* SettingsTableViewController.h */,
+				C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A169F41F5D2951000871E6 /* SettingsTableViewController.m in Sources */,
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,

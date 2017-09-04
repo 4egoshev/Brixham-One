@@ -60,11 +60,6 @@
     }
 }
 
-- (IBAction)reloadAction:(id)sender {
-    NSLog(@"Reload");
-    [self.tableView reloadData];
-}
-
 
 #pragma mark - Table view data source
 

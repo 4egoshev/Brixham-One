@@ -8,11 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    SingleChooseType = 0,
+    MultiChooseType
+}ListType;
+
+typedef enum {
+    NameType = 0,
+    SiteType
+}ContentType;
+
 @protocol ListDelegate;
 
 @interface ListTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *array;
+@property (assign, nonatomic) ListType listType;
+@property (assign, nonatomic) ContentType contentType;
 
 @property (strong, nonatomic) id<ListDelegate> delegate;
 

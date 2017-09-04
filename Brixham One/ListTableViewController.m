@@ -10,9 +10,21 @@
 
 @interface ListTableViewController ()
 
+@property (strong, nonatomic) NSMutableArray *selectedAray;
+@property (strong, nonatomic) NSString *object;
+
 @end
 
 @implementation ListTableViewController
+
+- (instancetype)initWithListType:(ListType)listType andContentType:(ContentType)contentType {
+    self = [super init];
+    if (self) {
+        self.listType = listType;
+        self.contentType = contentType;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +43,19 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SitiesIdentifier" forIndexPath:indexPath];
+
+    NSString *identifier = @"Identifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//        if (self.listType == SingleChooseType) {
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        }
+    }
+    if (self.listType == MultiChooseType) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+
     
     cell.textLabel.text = self.array[indexPath.row];
     
@@ -43,57 +67,70 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     NSString *object = self.array[indexPath.row];
 
     [self.delegate getObject:object];
     [self dismissViewControllerAnimated:true completion:nil];
+
+    switch (self.listType) {
+        case SingleChooseType:
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            [self saveObject:object];
+            break;
+        case MultiChooseType:
+            if (cell.accessoryType == UITableViewCellAccessoryNone) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [self.selectedAray addObject:object];
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                [self.selectedAray removeObject:object];
+            }
+            [self saveListArray:self.selectedAray];
+            break;
+        default:
+            break;
+    }
+}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    if (self.listType == SingleChooseType) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)saveListArray:(NSArray *)listArray {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listArray];
+    switch (self.contentType) {
+        case NameType:
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"NameList"];
+            break;
+        case SiteType:
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"SiteList"];
+            break;
+        default:
+            break;
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)saveObject:(NSString *)object {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
+    switch (self.contentType) {
+        case NameType:
+            NSLog(@"name type");
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"Name"];
+            break;
+        case SiteType:
+            NSLog(@"site type");
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"Site"];
+            break;
+        default:
+            break;
+    }
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

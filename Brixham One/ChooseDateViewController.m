@@ -11,15 +11,11 @@
 
 @interface ChooseDateViewController () <DatePickerViewDelegate>
 
-@property (strong, nonatomic) NSDate *beginDate;
-@property (strong, nonatomic) NSDate *endDate;
-
 @property (strong, nonatomic) NSArray *dateArray;
 @property (strong, nonatomic) NSArray *textForAlertArray;
 
 @property (strong, nonatomic) DatePickerView *datePickerView;
 
-@property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIView *appearanceView;
 @property (weak, nonatomic) IBOutlet UISwitch *todaySwitch;
 
@@ -29,10 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
     self.datePickerView = [DatePickerView new];
     self.datePickerView.delegate = self;
 }
-
 
 - (IBAction)todaySegmentedAction:(id)sender {
 
@@ -77,12 +74,12 @@
     UIAlertAction *okButton = [UIAlertAction actionWithTitle:button
                                                        style:UIAlertActionStyleCancel
                                                      handler:nil];
-
     [alert addAction:okButton];
     [self presentViewController:alert animated:YES completion:nil];
 
 }
 
+#pragma mark Load View
 
 - (void)loadDatePickerView {
     self.datePickerView = [[NSBundle mainBundle] loadNibNamed:@"DatePickerView" owner:self options:nil].firstObject;
@@ -108,7 +105,6 @@
     self.textForAlertArray = textArray;
 
 }
-
 
 /*
 #pragma mark - Navigation
