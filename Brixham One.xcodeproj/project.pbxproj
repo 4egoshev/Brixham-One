@@ -19,6 +19,9 @@
 		C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F05071F547E9A000CB5ED /* BarsViewController.m */; };
 		C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050A1F5482F2000CB5ED /* LineViewController.m */; };
 		C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050D1F5493F6000CB5ED /* PieViewController.m */; };
+		C9A169EB1F5C9C04000871E6 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */; };
+		C9A169EE1F5C9F4C000871E6 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */; };
+		C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */; };
 		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,11 @@
 		C97F050A1F5482F2000CB5ED /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 		C97F050C1F5493F6000CB5ED /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
 		C97F050D1F5493F6000CB5ED /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
+		C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		C9A169EC1F5C9F4C000871E6 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
+		C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		C9A169EF1F5CA109000871E6 /* ChooseDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseDateViewController.h; sourceTree = "<group>"; };
+		C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseDateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,7 @@
 			children = (
 				C92B32111F4F591E00C165B0 /* AppDelegate.h */,
 				C92B32121F4F591E00C165B0 /* AppDelegate.m */,
+				C9A169E91F5C9B77000871E6 /* View */,
 				C92B32481F4F59D900C165B0 /* Controllers */,
 				C92B323D1F4F59BB00C165B0 /* Main.storyboard */,
 				C92B321A1F4F591E00C165B0 /* Assets.xcassets */,
@@ -136,6 +145,8 @@
 				C97F050A1F5482F2000CB5ED /* LineViewController.m */,
 				C97F050C1F5493F6000CB5ED /* PieViewController.h */,
 				C97F050D1F5493F6000CB5ED /* PieViewController.m */,
+				C9A169EF1F5CA109000871E6 /* ChooseDateViewController.h */,
+				C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +158,16 @@
 				C9705FB01F534806006B4CE6 /* SWRevealViewController.m */,
 			);
 			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		C9A169E91F5C9B77000871E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9A169EC1F5C9F4C000871E6 /* DatePickerView.h */,
+				C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */,
+				C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +233,7 @@
 			files = (
 				C92B323E1F4F59BB00C165B0 /* Main.storyboard in Resources */,
 				C92B321E1F4F591E00C165B0 /* LaunchScreen.storyboard in Resources */,
+				C9A169EB1F5C9C04000871E6 /* DatePickerView.xib in Resources */,
 				C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +300,8 @@
 				C92B32461F4F59CF00C165B0 /* ListTableViewController.m in Sources */,
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
+				C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */,
+				C9A169EE1F5C9F4C000871E6 /* DatePickerView.m in Sources */,
 				C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */,
 				C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */,
 			);

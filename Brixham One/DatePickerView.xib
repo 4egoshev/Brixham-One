@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatePickerView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="luL-Kp-tIa">
+                    <rect key="frame" x="0.0" y="53" width="375" height="192"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="192" id="N3L-V6-DZW"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="526163433.62621802">
+                        <!--2017-09-03 20:30:33 +0000-->
+                    </date>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата начала" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBQ-j1-mNm">
+                    <rect key="frame" x="16" y="16" width="99" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="fQi-86-kCt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата окончания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leQ-6k-8X4">
+                    <rect key="frame" x="16" y="261" width="128" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9q-Ih-y0z">
+                    <rect key="frame" x="0.0" y="298" width="375" height="192"/>
+                    <date key="date" timeIntervalSinceReferenceDate="526163433.62621802">
+                        <!--2017-09-03 20:30:33 +0000-->
+                    </date>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="leQ-6k-8X4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="0np-tZ-LVX"/>
+                <constraint firstItem="leQ-6k-8X4" firstAttribute="top" secondItem="luL-Kp-tIa" secondAttribute="bottom" constant="16" id="2NL-PT-MvT"/>
+                <constraint firstItem="H9q-Ih-y0z" firstAttribute="height" secondItem="luL-Kp-tIa" secondAttribute="height" id="BMS-mY-Qch"/>
+                <constraint firstItem="leQ-6k-8X4" firstAttribute="height" secondItem="XBQ-j1-mNm" secondAttribute="height" id="DLT-aH-rf1"/>
+                <constraint firstItem="XBQ-j1-mNm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Lrd-O3-pHa"/>
+                <constraint firstItem="luL-Kp-tIa" firstAttribute="top" secondItem="XBQ-j1-mNm" secondAttribute="bottom" constant="16" id="Mea-y5-kAQ"/>
+                <constraint firstItem="XBQ-j1-mNm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="OCg-NI-J66"/>
+                <constraint firstAttribute="bottom" secondItem="H9q-Ih-y0z" secondAttribute="bottom" constant="17" id="ZsQ-9L-VvS"/>
+                <constraint firstItem="luL-Kp-tIa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nUl-oK-ZVG"/>
+                <constraint firstAttribute="trailing" secondItem="luL-Kp-tIa" secondAttribute="trailing" id="nv9-av-j5x"/>
+                <constraint firstItem="H9q-Ih-y0z" firstAttribute="trailing" secondItem="luL-Kp-tIa" secondAttribute="trailing" id="pG4-8j-dKh"/>
+                <constraint firstItem="H9q-Ih-y0z" firstAttribute="top" secondItem="leQ-6k-8X4" secondAttribute="bottom" constant="16" id="plA-37-4P1"/>
+                <constraint firstItem="H9q-Ih-y0z" firstAttribute="leading" secondItem="luL-Kp-tIa" secondAttribute="leading" id="zXB-aJ-3gE"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="beginDate" destination="luL-Kp-tIa" id="VkR-kz-0uP"/>
+                <outlet property="endDate" destination="H9q-Ih-y0z" id="IOp-lm-V3m"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="-15.5"/>
+        </view>
+    </objects>
+</document>
