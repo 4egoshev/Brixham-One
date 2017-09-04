@@ -362,11 +362,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Виберите дату" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUu-9E-B6r">
-                                                    <rect key="frame" x="8" y="8" width="125" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="27" id="BL4-Qh-yT7"/>
-                                                        <constraint firstAttribute="width" constant="125" id="Hcd-9i-uop"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="8" y="12" width="118.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -374,8 +370,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KUu-9E-B6r" firstAttribute="leading" secondItem="JEy-ae-xah" secondAttribute="leadingMargin" id="BN4-6X-Unn"/>
-                                                <constraint firstItem="KUu-9E-B6r" firstAttribute="top" secondItem="JEy-ae-xah" secondAttribute="topMargin" id="FWi-4r-EQ4"/>
-                                                <constraint firstItem="KUu-9E-B6r" firstAttribute="bottom" secondItem="JEy-ae-xah" secondAttribute="bottomMargin" id="smN-1e-sY5"/>
+                                                <constraint firstItem="KUu-9E-B6r" firstAttribute="centerY" secondItem="JEy-ae-xah" secondAttribute="centerY" id="ErK-Vb-8If"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -387,40 +382,35 @@
                             <tableViewSection headerTitle="Объекты статистики (по умолчанию)" id="0sC-ke-QBC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="hn6-no-Gue">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hn6-no-Gue" id="cFh-f3-Mbx">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Личность" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bec-mN-LKM">
-                                                    <rect key="frame" x="8" y="8" width="125" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="T7q-Fo-ovi"/>
-                                                        <constraint firstAttribute="height" constant="27" id="tCL-Ko-2bo"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="8" y="12.5" width="76" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Путин" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uve-es-4FT">
-                                                    <rect key="frame" x="215" y="8" width="119" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="119" id="QMP-Te-tZZ"/>
-                                                        <constraint firstAttribute="height" constant="27" id="qP5-zx-JAa"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k39-B3-qeu">
+                                                    <rect key="frame" x="285" y="12.5" width="49" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Путин" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uve-es-4FT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Uve-es-4FT" firstAttribute="trailing" secondItem="cFh-f3-Mbx" secondAttribute="trailingMargin" id="20c-xn-ry1"/>
-                                                <constraint firstItem="Uve-es-4FT" firstAttribute="top" secondItem="cFh-f3-Mbx" secondAttribute="topMargin" id="Khy-Ts-A2C"/>
-                                                <constraint firstItem="Bec-mN-LKM" firstAttribute="top" secondItem="cFh-f3-Mbx" secondAttribute="topMargin" id="YK1-by-hqi"/>
-                                                <constraint firstItem="Bec-mN-LKM" firstAttribute="bottom" secondItem="cFh-f3-Mbx" secondAttribute="bottomMargin" id="bva-8b-Yq1"/>
+                                                <constraint firstItem="Bec-mN-LKM" firstAttribute="centerY" secondItem="cFh-f3-Mbx" secondAttribute="centerY" id="Jp6-gn-308"/>
+                                                <constraint firstItem="k39-B3-qeu" firstAttribute="centerY" secondItem="cFh-f3-Mbx" secondAttribute="centerY" id="U3n-tI-y3Z"/>
                                                 <constraint firstItem="Bec-mN-LKM" firstAttribute="leading" secondItem="cFh-f3-Mbx" secondAttribute="leadingMargin" id="gsq-6p-cry"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Uve-es-4FT" secondAttribute="bottom" constant="1" id="j6E-pL-1lg"/>
+                                                <constraint firstItem="k39-B3-qeu" firstAttribute="trailing" secondItem="cFh-f3-Mbx" secondAttribute="trailingMargin" id="iBo-qc-FGm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -432,21 +422,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сайт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEG-uY-hBv">
-                                                    <rect key="frame" x="8" y="8" width="125" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="3y9-Rw-3NM"/>
-                                                        <constraint firstAttribute="height" constant="27" id="C00-bo-Ibx"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="8" y="11.5" width="39.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.google.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vc7-tK-XNu">
-                                                    <rect key="frame" x="174" y="8" width="160" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="160" id="RJg-t8-eSe"/>
-                                                        <constraint firstAttribute="height" constant="27" id="tLo-W0-vyq"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="202.5" y="11.5" width="131.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -454,11 +436,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vc7-tK-XNu" firstAttribute="trailing" secondItem="u8C-QK-Qii" secondAttribute="trailingMargin" id="Gj3-ba-Erq"/>
-                                                <constraint firstItem="pEG-uY-hBv" firstAttribute="bottom" secondItem="u8C-QK-Qii" secondAttribute="bottomMargin" id="Idi-QA-8BZ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vc7-tK-XNu" secondAttribute="bottom" constant="1" id="Srv-7H-r8D"/>
-                                                <constraint firstItem="pEG-uY-hBv" firstAttribute="top" secondItem="u8C-QK-Qii" secondAttribute="topMargin" id="ibV-VJ-VFo"/>
+                                                <constraint firstItem="pEG-uY-hBv" firstAttribute="centerY" secondItem="u8C-QK-Qii" secondAttribute="centerY" id="V41-jD-YFZ"/>
+                                                <constraint firstItem="vc7-tK-XNu" firstAttribute="centerY" secondItem="u8C-QK-Qii" secondAttribute="centerY" id="f4K-ZM-Cxv"/>
                                                 <constraint firstItem="pEG-uY-hBv" firstAttribute="leading" secondItem="u8C-QK-Qii" secondAttribute="leadingMargin" id="mRj-gl-7i6"/>
-                                                <constraint firstItem="vc7-tK-XNu" firstAttribute="top" secondItem="u8C-QK-Qii" secondAttribute="topMargin" id="vUq-wE-pGJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -474,19 +454,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цвета" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Heh-vW-KTH">
-                                                    <rect key="frame" x="8" y="8" width="125" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="PCU-6M-f9C"/>
-                                                        <constraint firstAttribute="height" constant="27" id="lSz-uy-cMG"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="8" y="11.5" width="48" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Heh-vW-KTH" firstAttribute="top" secondItem="2S1-QL-toI" secondAttribute="topMargin" id="OKB-cA-crS"/>
-                                                <constraint firstItem="Heh-vW-KTH" firstAttribute="bottom" secondItem="2S1-QL-toI" secondAttribute="bottomMargin" id="jgi-xe-jhK"/>
+                                                <constraint firstItem="Heh-vW-KTH" firstAttribute="centerY" secondItem="2S1-QL-toI" secondAttribute="centerY" id="XJt-73-uxl"/>
                                                 <constraint firstItem="Heh-vW-KTH" firstAttribute="leading" secondItem="2S1-QL-toI" secondAttribute="leadingMargin" id="u13-gv-bQR"/>
                                             </constraints>
                                         </tableViewCellContentView>

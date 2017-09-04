@@ -61,7 +61,6 @@
 
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dateArray];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"DateData"];
-    NSLog(@"array = %@",self.dateArray);
 
     [self showAlert];
 }
@@ -90,8 +89,6 @@
     self.datePickerView.frame = CGRectMake(self.appearanceView.bounds.origin.x, self.appearanceView.bounds.origin.y, self.appearanceView.bounds.size.width, self.appearanceView.bounds.size.height);
     self.datePickerView.delegate = self;
     [self.appearanceView addSubview:self.datePickerView];
-
-    NSLog(@"begin = %@ end = %@",self.datePickerView.beginDate.date,self.datePickerView.endDate.date);
 }
 
 - (void)removeDatePickerView {
@@ -109,7 +106,7 @@
 
 -(void)getTextForAlert:(NSArray *)textArray {
     self.textForAlertArray = textArray;
-    NSLog(@"text = %@",self.textForAlertArray);
+
 }
 
 

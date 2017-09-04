@@ -17,9 +17,6 @@
             <subviews>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="luL-Kp-tIa">
                     <rect key="frame" x="0.0" y="53" width="375" height="192"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="192" id="N3L-V6-DZW"/>
-                    </constraints>
                     <date key="date" timeIntervalSinceReferenceDate="526163433.62621802">
                         <!--2017-09-03 20:30:33 +0000-->
                     </date>
