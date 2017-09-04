@@ -532,7 +532,7 @@
                         <outlet property="choosedNameLabel" destination="Uve-es-4FT" id="3WH-40-r2X"/>
                         <outlet property="choosedSiteLabel" destination="dx1-Xd-6nd" id="3hw-r0-bZV"/>
                         <outlet property="nameCountLabel" destination="sOC-au-ojL" id="UmX-XN-XOX"/>
-                        <outlet property="sidebarButton" destination="AhW-Xj-BKe" id="faX-6C-DXh"/>
+                        <outlet property="sidebarButton" destination="AhW-Xj-BKe" id="bJf-Nr-tdi"/>
                         <outlet property="siteCountLabel" destination="F60-oZ-N2P" id="5Lf-Hh-WNb"/>
                     </connections>
                 </tableViewController>
