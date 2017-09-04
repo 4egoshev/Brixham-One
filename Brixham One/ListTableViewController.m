@@ -47,7 +47,7 @@
         case NameType:
         {
             NSLog(@"name");
-            NSData *indexData = [[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedIndexName"];
+            NSData *indexData = [[NSUserDefaults standardUserDefaults] objectForKey:NAME_SELECTION_INDEX];
             NSDictionary *indexDict = [NSKeyedUnarchiver unarchiveObjectWithData:indexData];
             NSInteger section = [indexDict[@"section"] integerValue];
             NSInteger row = [indexDict[@"row"] integerValue];
@@ -58,7 +58,7 @@
         case SiteType:
         {
             NSLog(@"site");
-            NSData *indexData = [[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedIndexSite"];
+            NSData *indexData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE_SELECTION_INDEX];
             NSDictionary *indexDict = [NSKeyedUnarchiver unarchiveObjectWithData:indexData];
             NSInteger section = [indexDict[@"section"] integerValue];
             NSInteger row = [indexDict[@"row"] integerValue];
@@ -167,10 +167,10 @@
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listArray];
     switch (self.contentType) {
         case NameType:
-            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"NameList"];
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:NAME_LIST];
             break;
         case SiteType:
-            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"SiteList"];
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:SITE_LIST];
             break;
         default:
             break;
@@ -186,14 +186,12 @@
     NSData *indexData = [NSKeyedArchiver archivedDataWithRootObject:indexDict];
     switch (self.contentType) {
         case NameType:
-            NSLog(@"name type");
-            [[NSUserDefaults standardUserDefaults] setObject:objectData forKey:@"Name"];
-            [[NSUserDefaults standardUserDefaults] setObject:indexData forKey:@"SelectedIndexName"];
+            [[NSUserDefaults standardUserDefaults] setObject:objectData forKey:NAME];
+            [[NSUserDefaults standardUserDefaults] setObject:indexData forKey:NAME_SELECTION_INDEX];
             break;
         case SiteType:
-            NSLog(@"site type");
-            [[NSUserDefaults standardUserDefaults] setObject:objectData forKey:@"Site"];
-            [[NSUserDefaults standardUserDefaults] setObject:indexData forKey:@"SelectedIndexSite"];
+            [[NSUserDefaults standardUserDefaults] setObject:objectData forKey:SITE];
+            [[NSUserDefaults standardUserDefaults] setObject:indexData forKey:SITE_SELECTION_INDEX];
             break;
         default:
             break;

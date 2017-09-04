@@ -54,15 +54,15 @@
 
 - (void)loadDataForRows {
 
-    NSData *nameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"Name"];
+    NSData *nameData = [[NSUserDefaults standardUserDefaults] objectForKey:NAME];
     self.choosedNameLabel.text = [NSKeyedUnarchiver unarchiveObjectWithData:nameData];
-    NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:@"Site"];
+    NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
     self.choosedSiteLabel.text = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
 
-    NSData *nameArrayData = [[NSUserDefaults standardUserDefaults] objectForKey:@"NameList"];
+    NSData *nameArrayData = [[NSUserDefaults standardUserDefaults] objectForKey:NAME_LIST];
     NSArray *nameArray = [NSKeyedUnarchiver unarchiveObjectWithData:nameArrayData];
     self.nameCountLabel.text = [NSString stringWithFormat:@"%ld",nameArray.count];
-    NSData *siteArrayData = [[NSUserDefaults standardUserDefaults] objectForKey:@"SiteList"];
+    NSData *siteArrayData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE_LIST];
     NSArray *siteArray = [NSKeyedUnarchiver unarchiveObjectWithData:siteArrayData];
     self.siteCountLabel.text = [NSString stringWithFormat:@"%ld",siteArray.count];
 }
@@ -90,14 +90,14 @@
             case THIRD_ROW:
             {
                 ListTableViewController *lvc = [[ListTableViewController alloc] initWithListType:MultiChooseType andContentType:SiteType];
-                lvc.array = self.namesArray;
+                lvc.array = self.sitesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;
             case FOUTH_ROW:
             {
                 ListTableViewController *lvc = [[ListTableViewController alloc] initWithListType:SingleChooseType andContentType:SiteType];
-                lvc.array = self.namesArray;
+                lvc.array = self.sitesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;

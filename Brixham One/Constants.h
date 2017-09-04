@@ -16,4 +16,12 @@
 #define THIRD_ROW 2
 #define FOUTH_ROW 3
 
+//NSUserDefaults
+#define NAME @"Name"
+#define SITE @"Site"
+#define NAME_LIST @"NameList"
+#define SITE_LIST @"SiteList"
+#define NAME_SELECTION_INDEX @"NameSelectedIndex"
+#define SITE_SELECTION_INDEX @"SiteSelectedIndex"
+
 #endif
