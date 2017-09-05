@@ -25,4 +25,6 @@
 #define NAME_SELECTION_INDEX @"NameSelectedIndex"
 #define SITE_SELECTION_INDEX @"SiteSelectedIndex"
 
+#define DATE @"DateData"
+
 #endif
