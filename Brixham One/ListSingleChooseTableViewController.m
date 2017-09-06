@@ -125,7 +125,6 @@
 
     NSString *object = self.contentArray[indexPath.row];
 
-    NSLog(@"obj = %@", object);
     switch (self.saveType) {
         case SettingsType:
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -159,7 +158,7 @@
 #pragma mark - Save Data
 
 - (void)saveObject:(NSString *)object forIndexPath:(NSIndexPath *)indexPath {
- NSLog(@"obj  save= %@", object);
+
     NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:object];
     NSDictionary *indexDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                @(indexPath.section),@"section",
