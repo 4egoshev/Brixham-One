@@ -8,7 +8,8 @@
 
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
-#import "ListDefaultsTableViewController.h"
+#import "ListMultiChooseTableViewController.h"
+#import "ListSingleChooseTableViewController.h"
 #import "Constants.h"
 
 @interface SettingsTableViewController ()
@@ -59,6 +60,8 @@
     NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
     self.choosedSiteLabel.text = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
 
+    NSLog(@"name = %@",self.choosedNameLabel.text);
+
     NSData *nameArrayData = [[NSUserDefaults standardUserDefaults] objectForKey:NAME_MULTI_SELECTION_INDEX];
     NSArray *nameArray = [NSKeyedUnarchiver unarchiveObjectWithData:nameArrayData];
     self.nameCountLabel.text = [NSString stringWithFormat:@"%ld",nameArray.count];
@@ -75,33 +78,33 @@
         switch (indexPath.row) {
             case FIRST_ROW:
             {
-                ListDefaultsTableViewController *lvc = [[ListDefaultsTableViewController alloc] initWithListType:MultiChooseType
-                                                                                                  andContentType:NameType];
-                lvc.array = self.namesArray;
+                ListMultiChooseTableViewController *lvc = [[ListMultiChooseTableViewController alloc] initWithContentType:NameType
+                                                                                                               andSaveTpe:SettingsType];
+                lvc.contentArray = self.namesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;
             case SECOND_ROW:
             {
-                ListDefaultsTableViewController *lvc = [[ListDefaultsTableViewController alloc] initWithListType:SingleChooseType
-                                                                                                  andContentType:NameType];
-                lvc.array = self.namesArray;
+                ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:NameType
+                                                                                         andSaveTpe:SettingsType];
+                lvc.contentArray = self.namesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;
             case THIRD_ROW:
             {
-                ListDefaultsTableViewController *lvc = [[ListDefaultsTableViewController alloc] initWithListType:MultiChooseType
-                                                                                                  andContentType:SiteType];
-                lvc.array = self.sitesArray;
+                ListMultiChooseTableViewController *lvc = [[ListMultiChooseTableViewController alloc] initWithContentType:SiteType
+                                                                                                               andSaveTpe:SettingsType];
+                lvc.contentArray = self.sitesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;
             case FOUTH_ROW:
             {
-                ListDefaultsTableViewController *lvc = [[ListDefaultsTableViewController alloc] initWithListType:SingleChooseType
-                                                                                                  andContentType:SiteType];
-                lvc.array = self.sitesArray;
+                ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:SiteType
+                                                                                         andSaveTpe:SettingsType];
+                lvc.contentArray = self.sitesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;

@@ -11,13 +11,13 @@
 
 @protocol ListDelegate;
 
-@interface ListTableViewController : UITableViewController
+@interface ListSingleChooseTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray *array;
+@property (strong, nonatomic) NSArray *contentArray;
 
 @property (strong, nonatomic) id<ListDelegate> delegate;
 
-- (instancetype)initWithContentType:(ContentType)contentType;
+- (instancetype)initWithContentType:(ContentType)contentType andSaveTpe:(SaveType)saveType;
 
 @end
 

@@ -13,7 +13,7 @@
 		C92B321E1F4F591E00C165B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92B321C1F4F591E00C165B0 /* LaunchScreen.storyboard */; };
 		C92B323E1F4F59BB00C165B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92B323D1F4F59BB00C165B0 /* Main.storyboard */; };
 		C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32401F4F59CF00C165B0 /* DateViewController.m */; };
-		C92B32461F4F59CF00C165B0 /* ListDefaultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32421F4F59CF00C165B0 /* ListDefaultsTableViewController.m */; };
+		C92B32461F4F59CF00C165B0 /* ListMultiChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32421F4F59CF00C165B0 /* ListMultiChooseTableViewController.m */; };
 		C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */; };
 		C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FB01F534806006B4CE6 /* SWRevealViewController.m */; };
 		C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F05071F547E9A000CB5ED /* BarsViewController.m */; };
@@ -23,7 +23,7 @@
 		C9A169EE1F5C9F4C000871E6 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */; };
 		C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */; };
 		C9A169F41F5D2951000871E6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */; };
-		C9A169F81F5E759D000871E6 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F71F5E759D000871E6 /* ListTableViewController.m */; };
+		C9A169F81F5E759D000871E6 /* ListSingleChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F71F5E759D000871E6 /* ListSingleChooseTableViewController.m */; };
 		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +41,8 @@
 		C92B323D1F4F59BB00C165B0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C92B323F1F4F59CF00C165B0 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		C92B32401F4F59CF00C165B0 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
-		C92B32411F4F59CF00C165B0 /* ListDefaultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDefaultsTableViewController.h; sourceTree = "<group>"; };
-		C92B32421F4F59CF00C165B0 /* ListDefaultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDefaultsTableViewController.m; sourceTree = "<group>"; };
+		C92B32411F4F59CF00C165B0 /* ListMultiChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListMultiChooseTableViewController.h; sourceTree = "<group>"; };
+		C92B32421F4F59CF00C165B0 /* ListMultiChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListMultiChooseTableViewController.m; sourceTree = "<group>"; };
 		C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatTableViewController.h; sourceTree = "<group>"; };
 		C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
 		C9705FAF1F534806006B4CE6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 		C9A169F21F5D2951000871E6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		C9A169F51F5DD1B3000871E6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		C9A169F61F5E759D000871E6 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
-		C9A169F71F5E759D000871E6 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		C9A169F61F5E759D000871E6 /* ListSingleChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSingleChooseTableViewController.h; sourceTree = "<group>"; };
+		C9A169F71F5E759D000871E6 /* ListSingleChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSingleChooseTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,20 +145,13 @@
 				C92B32401F4F59CF00C165B0 /* DateViewController.m */,
 				C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */,
 				C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */,
-				C9A169F61F5E759D000871E6 /* ListTableViewController.h */,
-				C9A169F71F5E759D000871E6 /* ListTableViewController.m */,
 				C97F05061F547E9A000CB5ED /* BarsViewController.h */,
 				C97F05071F547E9A000CB5ED /* BarsViewController.m */,
 				C97F05091F5482F1000CB5ED /* LineViewController.h */,
 				C97F050A1F5482F2000CB5ED /* LineViewController.m */,
 				C97F050C1F5493F6000CB5ED /* PieViewController.h */,
 				C97F050D1F5493F6000CB5ED /* PieViewController.m */,
-				C9A169EF1F5CA109000871E6 /* ChooseDateViewController.h */,
-				C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */,
-				C9A169F21F5D2951000871E6 /* SettingsTableViewController.h */,
-				C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */,
-				C92B32411F4F59CF00C165B0 /* ListDefaultsTableViewController.h */,
-				C92B32421F4F59CF00C165B0 /* ListDefaultsTableViewController.m */,
+				C9F466A71F60AC4300C21360 /* Settings */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +173,21 @@
 				C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		C9F466A71F60AC4300C21360 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C9A169F21F5D2951000871E6 /* SettingsTableViewController.h */,
+				C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */,
+				C9A169EF1F5CA109000871E6 /* ChooseDateViewController.h */,
+				C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */,
+				C9A169F61F5E759D000871E6 /* ListSingleChooseTableViewController.h */,
+				C9A169F71F5E759D000871E6 /* ListSingleChooseTableViewController.m */,
+				C92B32411F4F59CF00C165B0 /* ListMultiChooseTableViewController.h */,
+				C92B32421F4F59CF00C165B0 /* ListMultiChooseTableViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +315,11 @@
 			files = (
 				C9A169F41F5D2951000871E6 /* SettingsTableViewController.m in Sources */,
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
-				C9A169F81F5E759D000871E6 /* ListTableViewController.m in Sources */,
+				C9A169F81F5E759D000871E6 /* ListSingleChooseTableViewController.m in Sources */,
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
 				C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */,
-				C92B32461F4F59CF00C165B0 /* ListDefaultsTableViewController.m in Sources */,
+				C92B32461F4F59CF00C165B0 /* ListMultiChooseTableViewController.m in Sources */,
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
 				C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */,

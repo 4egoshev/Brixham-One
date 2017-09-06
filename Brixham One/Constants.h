@@ -14,6 +14,11 @@ typedef enum {
     MultiChooseType
 }ListType;
 
+typedef  enum {
+    SettingsType = 0,
+    ViewType
+}SaveType;
+
 typedef enum {
     NameType = 0,
     SiteType

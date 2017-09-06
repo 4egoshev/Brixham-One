@@ -7,7 +7,7 @@
 //
 
 #import "StatTableViewController.h"
-#import "ListTableViewController.h"
+#import "ListSingleChooseTableViewController.h"
 #import "DateViewController.h"
 #import "SWRevealViewController.h"
 
@@ -65,11 +65,11 @@
 - (IBAction)listButtonAction:(id)sender {
 
     if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers.firstObject) {
-        ListTableViewController *lvc = [[ListTableViewController alloc] initWithContentType:SiteType];
+        ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:SiteType andSaveTpe:ViewType];
         lvc.delegate = self;
         [self.navigationController presentViewController:lvc animated:YES completion:nil];
     } else {
-        ListTableViewController *lvc = [[ListTableViewController alloc] initWithContentType:NameType];
+        ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:NameType andSaveTpe:ViewType];
         lvc.delegate = self;
         [self.navigationController presentViewController:lvc animated:YES completion:nil];;
     }
