@@ -1,22 +1,13 @@
 //
-//  SitiesTableViewController.h
-//  Stat
+//  ListTableViewController.h
+//  Brixham One
 //
-//  Created by Александр Чегошев on 18.08.17.
+//  Created by Александр Чегошев on 05.09.17.
 //  Copyright © 2017 Александр Чегошев. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-typedef enum {
-    SingleChooseType = 0,
-    MultiChooseType
-}ListType;
-
-typedef enum {
-    NameType = 0,
-    SiteType
-}ContentType;
+#import "Constants.h"
 
 @protocol ListDelegate;
 
@@ -26,7 +17,7 @@ typedef enum {
 
 @property (strong, nonatomic) id<ListDelegate> delegate;
 
-- (instancetype)initWithListType:(ListType)listType andContentType:(ContentType)contentType;
+- (instancetype)initWithContentType:(ContentType)contentType;
 
 @end
 

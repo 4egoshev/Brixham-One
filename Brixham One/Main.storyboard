@@ -750,7 +750,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="Список-25" id="5iI-bJ-lLU">
                                 <connections>
-                                    <segue destination="8X3-kj-Okr" kind="presentation" identifier="toList" id="9xg-XS-vyQ"/>
+                                    <action selector="listButtonAction:" destination="OLn-nh-APW" id="GaR-hP-8ur"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="Календарь-25" id="rpH-CA-Jlo">
@@ -761,6 +761,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="listButton" destination="5iI-bJ-lLU" id="dVM-xP-fYl"/>
                         <outlet property="sidebarButton" destination="yBs-c0-cgG" id="8e9-Ov-UYt"/>
                     </connections>
                 </tableViewController>
