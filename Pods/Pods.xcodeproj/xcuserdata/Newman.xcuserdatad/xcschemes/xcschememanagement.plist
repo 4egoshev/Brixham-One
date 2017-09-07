@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FSCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Brixham One.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6C099391AEBF1B2555005DBEC8B10AF1</key>
+		<key>7E6D09DA8B1E7DD2FB43AAF4EED94144</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E3CD20169379066A6CB49B68E201DFE5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE985A4FE8F5F67B60801C473EBB3EF2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
