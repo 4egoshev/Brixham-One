@@ -10,16 +10,53 @@
 #import <AFNetworking.h>
 #import "Person.h"
 #import "Site.h"
+#import "Router.h"
 
 @implementation ServerManager
 
 +(ServerManager *)sharedManager {
+
     static ServerManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [ServerManager new];
     });
     return manager;
+}
+
+- (void)loginWithLogin:(NSString *)login
+           andPassword:(NSString *)password
+             onSuccees:(void(^)(NSString *accessToken))success
+             onFailure:(void(^)(NSError *error))failure {
+
+    NSLog(@"login = %@ password = %@",login,password);
+
+//    NSString *p = [NSString stringWithFormat:@"&%@&%@",login,password];
+
+//    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+//                            @"username",login,
+//                            @"password",password, nil];
+
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            login,@"username",
+                            password,@"password",nil];
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+
+
+
+    [manager POST:@"http://nerine.space:8000/api/user/api-token-auth/"
+                              parameters:params
+                                progress:nil
+                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                     NSLog(@"token = %@",responseObject);
+                                 }
+                                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                     NSLog(@"eror = %@",error);
+                                 }];
+
 }
 
 -(void)getRanksForPersonForDateArray:(NSArray *)dateArray

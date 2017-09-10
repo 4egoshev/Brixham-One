@@ -22,6 +22,10 @@
 		C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050D1F5493F6000CB5ED /* PieViewController.m */; };
 		C97F054D1F55B722000CB5ED /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F054C1F55B722000CB5ED /* ServerManager.m */; };
 		C97F05501F55E1BA000CB5ED /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F054F1F55E1BA000CB5ED /* Person.m */; };
+		C9F466A91F61E81500C21360 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F466A81F61E81500C21360 /* LoginView.xib */; };
+		C9F466AC1F61E8D100C21360 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F466AB1F61E8D100C21360 /* LoginView.m */; };
+		C9F466AF1F61EDBB00C21360 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F466AE1F61EDBB00C21360 /* LoginViewController.m */; };
+		C9F466B71F62296500C21360 /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F466B61F62296500C21360 /* Router.m */; };
 		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,13 @@
 		C97F054C1F55B722000CB5ED /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
 		C97F054E1F55E1BA000CB5ED /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		C97F054F1F55E1BA000CB5ED /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		C9F466A81F61E81500C21360 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		C9F466AA1F61E8D100C21360 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		C9F466AB1F61E8D100C21360 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		C9F466AD1F61EDBB00C21360 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C9F466AE1F61EDBB00C21360 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C9F466B51F62296400C21360 /* Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
+		C9F466B61F62296500C21360 /* Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +122,11 @@
 			children = (
 				C92B32111F4F591E00C165B0 /* AppDelegate.h */,
 				C92B32121F4F591E00C165B0 /* AppDelegate.m */,
+				C9F466AA1F61E8D100C21360 /* LoginView.h */,
+				C9F466AB1F61E8D100C21360 /* LoginView.m */,
+				C9F466A81F61E81500C21360 /* LoginView.xib */,
+				C9F466AD1F61EDBB00C21360 /* LoginViewController.h */,
+				C9F466AE1F61EDBB00C21360 /* LoginViewController.m */,
 				C97F05511F55E1C6000CB5ED /* Model */,
 				C97F054A1F55B6E7000CB5ED /* Net */,
 				C92B32481F4F59D900C165B0 /* Controllers */,
@@ -165,6 +181,8 @@
 			children = (
 				C97F054B1F55B722000CB5ED /* ServerManager.h */,
 				C97F054C1F55B722000CB5ED /* ServerManager.m */,
+				C9F466B51F62296400C21360 /* Router.h */,
+				C9F466B61F62296500C21360 /* Router.m */,
 			);
 			name = Net;
 			sourceTree = "<group>";
@@ -243,6 +261,7 @@
 			files = (
 				C92B323E1F4F59BB00C165B0 /* Main.storyboard in Resources */,
 				C92B321E1F4F591E00C165B0 /* LaunchScreen.storyboard in Resources */,
+				C9F466A91F61E81500C21360 /* LoginView.xib in Resources */,
 				C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +325,8 @@
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
 				C905A5311F59A319003FFB1E /* Site.m in Sources */,
 				C97F05501F55E1BA000CB5ED /* Person.m in Sources */,
+				C9F466B71F62296500C21360 /* Router.m in Sources */,
+				C9F466AF1F61EDBB00C21360 /* LoginViewController.m in Sources */,
 				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
 				C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */,
@@ -313,6 +334,7 @@
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
 				C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */,
+				C9F466AC1F61E8D100C21360 /* LoginView.m in Sources */,
 				C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
