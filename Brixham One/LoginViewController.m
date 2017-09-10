@@ -9,8 +9,13 @@
 #import "LoginViewController.h"
 #import "LoginView.h"
 #import "ServerManager.h"
+#import "SWRevealViewController.h"
 
-@interface LoginViewController ()// <UITextFieldDelegate>
+@interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *loginField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIButton *enterButton;
 
 @property (strong, nonatomic) LoginView *loginView;
 
@@ -21,12 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    [UITextField new].delegate = self;
-
     LoginView *loginView = [[NSBundle mainBundle] loadNibNamed:@"LoginView" owner:self options:nil].firstObject;
-
     loginView.frame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height);
-
     [loginView.enterButton addTarget:self action:@selector(enter:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginView];
 
@@ -41,25 +42,15 @@
                                       andPassword:self.loginView.passwordField.text
                                         onSuccees:^(NSString *accessToken) {
                                             NSLog(@"Enter");
+                                            if (accessToken) {
+                                                UIStoryboard *storuboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                SWRevealViewController *swvc = [storuboard instantiateViewControllerWithIdentifier:@"SWVC"];
+                                                [self presentViewController:swvc animated:YES completion:nil];
+                                            }
                                         }
                                         onFailure:^(NSError *error) {
                                             NSLog(@"Not");
                                         }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

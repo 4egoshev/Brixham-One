@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90B4EA51F65DB360038BB13 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EA11F65DB350038BB13 /* LoginView.m */; };
+		C90B4EA61F65DB360038BB13 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90B4EA21F65DB350038BB13 /* LoginView.xib */; };
+		C90B4EA71F65DB360038BB13 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EA41F65DB350038BB13 /* LoginViewController.m */; };
+		C90B4EAC1F65DB620038BB13 /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EA91F65DB620038BB13 /* Router.m */; };
+		C90B4EAD1F65DB620038BB13 /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EAB1F65DB620038BB13 /* ServerManager.m */; };
+		C90B4EB31F65DB9E0038BB13 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB01F65DB9E0038BB13 /* Person.m */; };
+		C90B4EB41F65DB9E0038BB13 /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB21F65DB9E0038BB13 /* Site.m */; };
+		C90B4EB81F65E35D0038BB13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB71F65E35D0038BB13 /* User.m */; };
 		C92B32101F4F591E00C165B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B320F1F4F591E00C165B0 /* main.m */; };
 		C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32121F4F591E00C165B0 /* AppDelegate.m */; };
 		C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92B321A1F4F591E00C165B0 /* Assets.xcassets */; };
@@ -16,9 +24,6 @@
 		C92B32461F4F59CF00C165B0 /* ListMultiChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32421F4F59CF00C165B0 /* ListMultiChooseTableViewController.m */; };
 		C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */; };
 		C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FB01F534806006B4CE6 /* SWRevealViewController.m */; };
-		C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F05071F547E9A000CB5ED /* BarsViewController.m */; };
-		C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050A1F5482F2000CB5ED /* LineViewController.m */; };
-		C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97F050D1F5493F6000CB5ED /* PieViewController.m */; };
 		C9A169EB1F5C9C04000871E6 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */; };
 		C9A169EE1F5C9F4C000871E6 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */; };
 		C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */; };
@@ -31,6 +36,21 @@
 		8A427D8D32E39ACE47F4C864 /* Pods-Brixham One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.release.xcconfig"; sourceTree = "<group>"; };
 		BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Brixham One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75C8FA8F0FDD54897E762B2 /* Pods-Brixham One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.debug.xcconfig"; sourceTree = "<group>"; };
+		C90B4EA01F65DB350038BB13 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		C90B4EA11F65DB350038BB13 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		C90B4EA21F65DB350038BB13 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		C90B4EA31F65DB350038BB13 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C90B4EA41F65DB350038BB13 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C90B4EA81F65DB620038BB13 /* Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
+		C90B4EA91F65DB620038BB13 /* Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
+		C90B4EAA1F65DB620038BB13 /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
+		C90B4EAB1F65DB620038BB13 /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
+		C90B4EAF1F65DB9E0038BB13 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		C90B4EB01F65DB9E0038BB13 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		C90B4EB11F65DB9E0038BB13 /* Site.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Site.h; sourceTree = "<group>"; };
+		C90B4EB21F65DB9E0038BB13 /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Site.m; sourceTree = "<group>"; };
+		C90B4EB61F65E35D0038BB13 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		C90B4EB71F65E35D0038BB13 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C92B320B1F4F591E00C165B0 /* Brixham One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brixham One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92B320F1F4F591E00C165B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92B32111F4F591E00C165B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,12 +67,6 @@
 		C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
 		C9705FAF1F534806006B4CE6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C9705FB01F534806006B4CE6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		C97F05061F547E9A000CB5ED /* BarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarsViewController.h; sourceTree = "<group>"; };
-		C97F05071F547E9A000CB5ED /* BarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarsViewController.m; sourceTree = "<group>"; };
-		C97F05091F5482F1000CB5ED /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
-		C97F050A1F5482F2000CB5ED /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
-		C97F050C1F5493F6000CB5ED /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
-		C97F050D1F5493F6000CB5ED /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
 		C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		C9A169EC1F5C9F4C000871E6 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
@@ -94,6 +108,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C90B4EAE1F65DB6E0038BB13 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				C90B4EA81F65DB620038BB13 /* Router.h */,
+				C90B4EA91F65DB620038BB13 /* Router.m */,
+				C90B4EAA1F65DB620038BB13 /* ServerManager.h */,
+				C90B4EAB1F65DB620038BB13 /* ServerManager.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+		C90B4EB51F65DBAB0038BB13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C90B4EAF1F65DB9E0038BB13 /* Person.h */,
+				C90B4EB01F65DB9E0038BB13 /* Person.m */,
+				C90B4EB11F65DB9E0038BB13 /* Site.h */,
+				C90B4EB21F65DB9E0038BB13 /* Site.m */,
+				C90B4EB61F65E35D0038BB13 /* User.h */,
+				C90B4EB71F65E35D0038BB13 /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C92B32021F4F591C00C165B0 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +155,8 @@
 			children = (
 				C92B32111F4F591E00C165B0 /* AppDelegate.h */,
 				C92B32121F4F591E00C165B0 /* AppDelegate.m */,
+				C90B4EB51F65DBAB0038BB13 /* Model */,
+				C90B4EAE1F65DB6E0038BB13 /* Net */,
 				C9A169E91F5C9B77000871E6 /* View */,
 				C92B32481F4F59D900C165B0 /* Controllers */,
 				C92B323D1F4F59BB00C165B0 /* Main.storyboard */,
@@ -145,12 +185,8 @@
 				C92B32401F4F59CF00C165B0 /* DateViewController.m */,
 				C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */,
 				C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */,
-				C97F05061F547E9A000CB5ED /* BarsViewController.h */,
-				C97F05071F547E9A000CB5ED /* BarsViewController.m */,
-				C97F05091F5482F1000CB5ED /* LineViewController.h */,
-				C97F050A1F5482F2000CB5ED /* LineViewController.m */,
-				C97F050C1F5493F6000CB5ED /* PieViewController.h */,
-				C97F050D1F5493F6000CB5ED /* PieViewController.m */,
+				C90B4EA31F65DB350038BB13 /* LoginViewController.h */,
+				C90B4EA41F65DB350038BB13 /* LoginViewController.m */,
 				C9F466A71F60AC4300C21360 /* Settings */,
 			);
 			name = Controllers;
@@ -168,6 +204,9 @@
 		C9A169E91F5C9B77000871E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C90B4EA01F65DB350038BB13 /* LoginView.h */,
+				C90B4EA11F65DB350038BB13 /* LoginView.m */,
+				C90B4EA21F65DB350038BB13 /* LoginView.xib */,
 				C9A169EC1F5C9F4C000871E6 /* DatePickerView.h */,
 				C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */,
 				C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */,
@@ -254,6 +293,7 @@
 				C92B323E1F4F59BB00C165B0 /* Main.storyboard in Resources */,
 				C92B321E1F4F591E00C165B0 /* LaunchScreen.storyboard in Resources */,
 				C9A169EB1F5C9C04000871E6 /* DatePickerView.xib in Resources */,
+				C90B4EA61F65DB360038BB13 /* LoginView.xib in Resources */,
 				C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,15 +356,19 @@
 				C9A169F41F5D2951000871E6 /* SettingsTableViewController.m in Sources */,
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
 				C9A169F81F5E759D000871E6 /* ListSingleChooseTableViewController.m in Sources */,
-				C97F05081F547E9A000CB5ED /* BarsViewController.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
-				C97F050E1F5493F6000CB5ED /* PieViewController.m in Sources */,
+				C90B4EB81F65E35D0038BB13 /* User.m in Sources */,
+				C90B4EAD1F65DB620038BB13 /* ServerManager.m in Sources */,
 				C92B32461F4F59CF00C165B0 /* ListMultiChooseTableViewController.m in Sources */,
+				C90B4EB41F65DB9E0038BB13 /* Site.m in Sources */,
+				C90B4EA51F65DB360038BB13 /* LoginView.m in Sources */,
 				C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */,
 				C92B32101F4F591E00C165B0 /* main.m in Sources */,
+				C90B4EA71F65DB360038BB13 /* LoginViewController.m in Sources */,
 				C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */,
 				C9A169EE1F5C9F4C000871E6 /* DatePickerView.m in Sources */,
-				C97F050B1F5482F2000CB5ED /* LineViewController.m in Sources */,
+				C90B4EB31F65DB9E0038BB13 /* Person.m in Sources */,
+				C90B4EAC1F65DB620038BB13 /* Router.m in Sources */,
 				C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

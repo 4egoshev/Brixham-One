@@ -11,6 +11,7 @@
 #import "Person.h"
 #import "Site.h"
 #import "Router.h"
+#import "User.h"
 
 @implementation ServerManager
 
@@ -31,27 +32,18 @@
 
     NSLog(@"login = %@ password = %@",login,password);
 
-//    NSString *p = [NSString stringWithFormat:@"&%@&%@",login,password];
-
-//    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-//                            @"username",login,
-//                            @"password",password, nil];
-
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             login,@"username",
                             password,@"password",nil];
 
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-
-//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-
-
-
-    [manager POST:@"http://nerine.space:8000/api/user/api-token-auth/"
+    [[AFHTTPSessionManager manager] POST:@"http://nerine.space:8000/api/user/api-token-auth/"
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                                      NSLog(@"token = %@",responseObject);
+                                     User *user = [User new];
+                                     user.token = responseObject;
+                                     success(responseObject);
                                  }
                                  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                      NSLog(@"eror = %@",error);
