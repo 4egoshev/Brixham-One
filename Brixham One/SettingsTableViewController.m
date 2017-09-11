@@ -87,8 +87,8 @@
             case SECOND_ROW:
             {
                 ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:NameType
-                                                                                         andSaveTpe:SettingsType];
-                lvc.contentArray = self.namesArray;
+                                                                                                                 andSaveTpe:SettingsType];
+//                lvc.contentArray = self.namesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;
@@ -103,7 +103,7 @@
             case FOUTH_ROW:
             {
                 ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:SiteType
-                                                                                         andSaveTpe:SettingsType];
+                                                                                                                 andSaveTpe:SettingsType];
                 lvc.contentArray = self.sitesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }

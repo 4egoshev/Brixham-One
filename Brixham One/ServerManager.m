@@ -12,6 +12,7 @@
 #import "Site.h"
 #import "Router.h"
 #import "User.h"
+#import "Constants.h"
 
 @implementation ServerManager
 
@@ -36,7 +37,7 @@
                             login,@"username",
                             password,@"password",nil];
 
-    [[AFHTTPSessionManager manager] POST:@"http://nerine.space:8000/api/user/api-token-auth/"
+    [[AFHTTPSessionManager manager] POST:[[Router sharedManager] stringWithrequestType:LoginRequest]
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -51,6 +52,25 @@
 
 }
 
+- (void)getSitesOnSuccees:(void(^)(NSArray *ranksArray))success
+                onFailure:(void(^)(NSError *error))failure {
+
+//    User *user = [User new];
+
+    NSLog(@"request = %@",[[Router sharedManager] stringWithrequestType:SitesRequest]);
+
+    [[AFHTTPSessionManager manager] GET:[[Router sharedManager] stringWithrequestType:SitesRequest]
+                             parameters:nil
+                               progress:nil
+                                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                    NSLog(@"Sites = %@",responseObject);
+                                }
+                                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                    NSLog(@"error = %@",error);
+                                }];
+}
+
+
 -(void)getRanksForPersonForDateArray:(NSArray *)dateArray
                             fromSite:(NSString *)site
                            onSuccees:(void(^)(NSArray *ranksArray))success
@@ -60,32 +80,24 @@
     NSDate *end = dateArray.lastObject;
 
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            @"beginDate",begin,
-                            @"endDate",end,
-                            @"site",site, nil];
+                            begin,@"",
+                            end,@"",
+                            site,@"", nil];
 
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"API"
-      parameters:params
-         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[AFHTTPSessionManager manager] GET:[[Router sharedManager] stringWithrequestType:RanksRequest]
+                             parameters:params
+                               progress:nil
+                                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                    NSLog(@"json = %@",responseObject);
+                                }
+                                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 
-             NSArray *responseArray = responseObject[@"persons"];
-             NSMutableArray *array = [NSMutableArray new];
+                                }];
 
-             for (NSDictionary *dict in responseArray) {
-                 Person *person = [Person new];
-                 person.name = dict[@"name"];
-                 person.ranks = dict[@"ranks"];
-                 [array addObject:person];
-             }
-             success(array);
-         }
-         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             NSLog(@"%@",error);
-         }];
     
 }
 
+/*
 -(void)getRanksForSitesForDateArray:(NSArray *)dateArray
                           forPerson:(NSString *)person
                           onSuccees:(void(^)(NSArray *ranksArray))success
@@ -120,5 +132,6 @@
          }];
     
 }
+*/
 
 @end

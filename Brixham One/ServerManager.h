@@ -18,6 +18,9 @@
              onSuccees:(void(^)(NSString *accessToken))success
              onFailure:(void(^)(NSError *error))failure;
 
+- (void)getSitesOnSuccees:(void(^)(NSArray *ranksArray))success
+                onFailure:(void(^)(NSError *error))failure;
+
 
 - (void)getRanksForPersonForDateArray:(NSArray *)dateArray
                             fromSite:(NSString *)site

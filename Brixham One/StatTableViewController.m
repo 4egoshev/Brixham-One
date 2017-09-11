@@ -10,6 +10,7 @@
 #import "ListSingleChooseTableViewController.h"
 #import "DateViewController.h"
 #import "SWRevealViewController.h"
+#import "ServerManager.h"
 
 @interface StatTableViewController () <ListDelegate, DateDelegate>
 
@@ -32,6 +33,9 @@
     self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
     self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
 
+    [self getContentFromServer];
+
+    NSLog(@"date = %@",self.dateArray);
     [self sideBarButtonAction];
 }
 
@@ -60,6 +64,17 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+}
+
+- (void)getContentFromServer {
+    [[ServerManager sharedManager] getRanksForPersonForDateArray:self.dateArray
+                                                        fromSite:self.sitesArray[0]
+                                                       onSuccees:^(NSArray *ranksArray) {
+
+                                                       }
+                                                       onFailure:^(NSError *error) {
+
+                                                       }];
 }
 
 - (IBAction)listButtonAction:(id)sender {
@@ -96,7 +111,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
 //    if ([segue.identifier isEqualToString:@"toList"] && self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {

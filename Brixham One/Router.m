@@ -29,6 +29,12 @@
         case LoginRequest:
             method = @"api/user/api-token-auth/";
             break;
+        case SitesRequest:
+            method = @"api/sites/";
+            break;
+        case RanksRequest:
+            method = @"api/user/period/";
+            break;
 
         default:
             break;

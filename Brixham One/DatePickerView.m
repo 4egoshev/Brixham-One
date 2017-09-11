@@ -7,8 +7,7 @@
 //
 
 #import "DatePickerView.h"
-
-#define DAY_AGO -86400
+#import "Constants.h"
 
 @implementation DatePickerView
 
@@ -30,6 +29,7 @@
 
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"dd.MM.yy"];
+//    [formatter setDateFormat:@"yy-MM-dd"];
     NSString *beginDate = [formatter stringFromDate:self.beginDate.date];
     NSString *endDate = [formatter stringFromDate:self.endDate.date];
     NSArray *array = [NSArray arrayWithObjects:beginDate,endDate, nil];
@@ -41,6 +41,7 @@
     NSDate *today = [NSDate date];
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"dd.MM.yy"];
+//    [formatter setDateFormat:@"yy-MM-dd"];
     NSString *todayString = [formatter stringFromDate:today];
     NSArray *array = [NSArray arrayWithObjects:todayString,todayString, nil];
     [self.delegate getDateArray:array];

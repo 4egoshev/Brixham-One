@@ -7,6 +7,7 @@
 //
 
 #import "ListSingleChooseTableViewController.h"
+#import "ServerManager.h"
 
 @interface ListSingleChooseTableViewController ()
 
@@ -33,7 +34,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self getContent];
+    [self requestForServer];
+}
+
+- (void)requestForServer {
+
+    [[ServerManager sharedManager] getSitesOnSuccees:^(NSArray *ranksArray) {
+
+                                           }
+                                           onFailure:^(NSError *error) {
+                                               
+                                           }];
 }
 
 //Заменить на Core Data

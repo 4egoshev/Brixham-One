@@ -10,7 +10,8 @@
 
 typedef enum {
     LoginRequest = 0,
-    SitesRequest
+    SitesRequest,
+    RanksRequest
 } RequestType;
 
 @interface Router : NSObject

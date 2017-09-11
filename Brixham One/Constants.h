@@ -24,6 +24,8 @@ typedef enum {
     SiteType
 }ContentType;
 
+#define DAY_AGO -86400
+
 //TableView
 #define SECOND_SECTION 1
 
