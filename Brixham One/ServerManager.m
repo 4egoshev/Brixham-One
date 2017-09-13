@@ -7,7 +7,7 @@
 //
 
 #import "ServerManager.h"
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 #import "Person.h"
 #import "Site.h"
 #import "Router.h"

@@ -13,8 +13,9 @@
 #import "ServerManager.h"
 #import "ListSingleChooseTableViewController.h"
 #import "DateView.h"
+#import "Person.h"
 
-@interface PieViewController () <PieChartDataSource,PieChartDelegate>
+@interface PieViewController () <PieChartDataSource,ListDelegate>
 
 @property (strong, nonatomic) NSString *object;
 @property (strong, nonatomic) NSArray *dateArray;
@@ -22,7 +23,6 @@
 @property (strong, nonatomic) NSArray *contentArray;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (weak, nonatomic) IBOutlet UIView *pieView;
 
 @end
 
@@ -31,21 +31,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self loadNavView];
+    [self chooseData];
     [self sideBarButtonAction];
-    [self createPieChart];
 }
 
-- (void)sideBarButtonAction {
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
 
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.sidebarButton setTarget: self.revealViewController];
-        [self.sidebarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
+    [self loadNavView];
+    [self removeAllViews];
+    [self getContentFromServer];
 }
+
+#pragma  mark - Config View
 
 - (void)chooseData {
 
@@ -60,8 +58,6 @@
         NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
         self.object = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
     }
-    NSLog(@"date = %@",self.dateArray);
-    NSLog(@"site = %@",self.object);
 }
 
 - (void)configDateToday {
@@ -77,15 +73,34 @@
 
     DateView *dateView = [[NSBundle mainBundle] loadNibNamed:@"DateView" owner:self options:nil].firstObject;
     self.navigationItem.titleView = dateView;
-
     [dateView configTitleWithObject:self.object andDateArray:self.dateArray];
 }
+
+- (void)removeAllViews {
+
+    for (PieChart *view in self.view.subviews) {
+        [view removeFromSuperview];
+    }
+}
+
+#pragma mark - Navigation Buttons
 
 - (IBAction)listButtonAction:(id)sender {
 
     ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:SiteType andSaveTpe:ViewType];
     lvc.delegate = self;
     [self.navigationController presentViewController:lvc animated:YES completion:nil];
+}
+
+- (void)sideBarButtonAction {
+
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sidebarButton setTarget: self.revealViewController];
+        [self.sidebarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 }
 
 
@@ -97,9 +112,16 @@
                                                    onSuccees:^(NSArray *ranksArray) {
 
                                                        self.contentArray = ranksArray;
+                                                       [self createPieChart];
                                                    }
                                                    onFailure:^(NSError *error) {
                                                    }];
+}
+
+#pragma mark - ListDelegate
+
+- (void)getObject:(NSString *)object {
+    self.object = object;
 }
 
 #pragma - mark CreatePieChart
@@ -107,7 +129,6 @@
 - (void)createPieChart{
     PieChart *chart = [[PieChart alloc] initWithFrame:CGRectMake(0, header_height, WIDTH(self.view), (HEIGHT(self.view) - header_height)/2)];
     [chart setDataSource:self];
-    [chart setDelegate:self];
     [chart setLegendViewType:LegendTypeHorizontal];
     [chart setShowCustomMarkerView:TRUE];
     [chart drawPieChart];
@@ -128,11 +149,16 @@
 }
 
 - (NSString *)titleForValueInPieChartWithIndex:(NSInteger)index{
-    return [NSString stringWithFormat:@"data %ld",(long)index];
+
+    Person *person = self.contentArray[index];
+    return [NSString stringWithFormat:@"%@",person.name];
 }
 
 - (NSNumber *)valueInPieChartWithIndex:(NSInteger)index{
-    return [NSNumber numberWithLong:random() % 100];
+
+    Person *person = self.contentArray[index];
+    return [NSNumber numberWithInteger:person.ranks];
+//    return [NSNumber numberWithLong:random() % 100];
 }
 
 - (UIView *)customViewForPieChartTouchWithValue:(NSNumber *)value{
@@ -148,17 +174,12 @@
     UILabel *label = [[UILabel alloc] init];
     [label setFont:[UIFont systemFontOfSize:12]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setText:[NSString stringWithFormat:@"Pie Data: %@", value]];
+    [label setText:[NSString stringWithFormat:@"%@", value]];
     [label setFrame:CGRectMake(0, 0, 100, 30)];
     [view addSubview:label];
 
     [view setFrame:label.frame];
     return view;
-}
-
-#pragma - mark PieChartDelegate
-- (void)didTapOnPieChartWithValue:(NSString *)value{
-    NSLog(@"Pie Chart: %@",value);
 }
 
 @end

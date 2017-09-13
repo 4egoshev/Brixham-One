@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FSCalendar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Brixham One.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7E6D09DA8B1E7DD2FB43AAF4EED94144</key>
+		<key>4C231E1EF5CD1EDD7729953B20C7DC7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E033EDB5EC0819481B0546434FA577B</key>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3CD20169379066A6CB49B68E201DFE5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE985A4FE8F5F67B60801C473EBB3EF2</key>
+		<key>D2A91C6F7653A0B79E017C2D9226B994</key>
 		<dict>
 			<key>primary</key>
 			<true/>

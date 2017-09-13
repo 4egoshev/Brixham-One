@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CE18775E08AF521D4FCF314 /* Pods_Brixham_One.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A131197B777F0112B2E3D7 /* Pods_Brixham_One.framework */; };
 		C90B4EA51F65DB360038BB13 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EA11F65DB350038BB13 /* LoginView.m */; };
 		C90B4EA61F65DB360038BB13 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90B4EA21F65DB350038BB13 /* LoginView.xib */; };
 		C90B4EA71F65DB360038BB13 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EA41F65DB350038BB13 /* LoginViewController.m */; };
@@ -16,8 +17,6 @@
 		C90B4EB41F65DB9E0038BB13 /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB21F65DB9E0038BB13 /* Site.m */; };
 		C90B4EB81F65E35D0038BB13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB71F65E35D0038BB13 /* User.m */; };
 		C90B4EC61F664BAF0038BB13 /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EC51F664BAF0038BB13 /* PieViewController.m */; };
-		C90B4EC81F664C810038BB13 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B4EC71F664C810038BB13 /* libAFNetworking.a */; };
-		C90B4ECA1F664C850038BB13 /* libdrCharts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B4EC91F664C850038BB13 /* libdrCharts.a */; };
 		C92B32101F4F591E00C165B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B320F1F4F591E00C165B0 /* main.m */; };
 		C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32121F4F591E00C165B0 /* AppDelegate.m */; };
 		C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92B321A1F4F591E00C165B0 /* Assets.xcassets */; };
@@ -25,6 +24,8 @@
 		C92B323E1F4F59BB00C165B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92B323D1F4F59BB00C165B0 /* Main.storyboard */; };
 		C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32401F4F59CF00C165B0 /* DateViewController.m */; };
 		C92B32461F4F59CF00C165B0 /* ListMultiChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32421F4F59CF00C165B0 /* ListMultiChooseTableViewController.m */; };
+		C9374C441F694A1400A2A6EA /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9374C431F694A1400A2A6EA /* AFNetworking.framework */; };
+		C9374C451F694A1700A2A6EA /* drCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9374C411F69496E00A2A6EA /* drCharts.framework */; };
 		C9705FAD1F52D8F0006B4CE6 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */; };
 		C9705FB11F534806006B4CE6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9705FB01F534806006B4CE6 /* SWRevealViewController.m */; };
 		C9A169EB1F5C9C04000871E6 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */; };
@@ -34,12 +35,11 @@
 		C9A169F81F5E759D000871E6 /* ListSingleChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F71F5E759D000871E6 /* ListSingleChooseTableViewController.m */; };
 		C9EAA3201F676DD300D383B2 /* DateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EAA31F1F676DD300D383B2 /* DateView.xib */; };
 		C9EAA3231F676E6D00D383B2 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAA3221F676E6D00D383B2 /* DateView.m */; };
-		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66A131197B777F0112B2E3D7 /* Pods_Brixham_One.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brixham_One.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A427D8D32E39ACE47F4C864 /* Pods-Brixham One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.release.xcconfig"; sourceTree = "<group>"; };
-		BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Brixham One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75C8FA8F0FDD54897E762B2 /* Pods-Brixham One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brixham One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brixham One/Pods-Brixham One.debug.xcconfig"; sourceTree = "<group>"; };
 		C90B4EA01F65DB350038BB13 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		C90B4EA11F65DB350038BB13 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
@@ -72,6 +72,8 @@
 		C92B32401F4F59CF00C165B0 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		C92B32411F4F59CF00C165B0 /* ListMultiChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListMultiChooseTableViewController.h; sourceTree = "<group>"; };
 		C92B32421F4F59CF00C165B0 /* ListMultiChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListMultiChooseTableViewController.m; sourceTree = "<group>"; };
+		C9374C411F69496E00A2A6EA /* drCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = drCharts.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Brixham_One-extwowyzoqvsuegszsgfjbfcdfky/Build/Products/Debug-iphonesimulator/drCharts/drCharts.framework"; sourceTree = "<group>"; };
+		C9374C431F694A1400A2A6EA /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Brixham_One-extwowyzoqvsuegszsgfjbfcdfky/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		C9705FAB1F52D8F0006B4CE6 /* StatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatTableViewController.h; sourceTree = "<group>"; };
 		C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
 		C9705FAF1F534806006B4CE6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -96,9 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B4ECA1F664C850038BB13 /* libdrCharts.a in Frameworks */,
-				C90B4EC81F664C810038BB13 /* libAFNetworking.a in Frameworks */,
-				E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */,
+				C9374C451F694A1700A2A6EA /* drCharts.framework in Frameworks */,
+				C9374C441F694A1400A2A6EA /* AFNetworking.framework in Frameworks */,
+				9CE18775E08AF521D4FCF314 /* Pods_Brixham_One.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,9 +119,11 @@
 		AECD8D1ACA2E0670C053FFAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9374C431F694A1400A2A6EA /* AFNetworking.framework */,
+				C9374C411F69496E00A2A6EA /* drCharts.framework */,
 				C90B4EC91F664C850038BB13 /* libdrCharts.a */,
 				C90B4EC71F664C810038BB13 /* libAFNetworking.a */,
-				BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */,
+				66A131197B777F0112B2E3D7 /* Pods_Brixham_One.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

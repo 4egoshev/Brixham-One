@@ -15,12 +15,10 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - drCharts (1.4)
-  - FSCalendar (2.7.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - drCharts (from `https://github.com/Zomato/DR-charts.git`)
-  - FSCalendar
 
 EXTERNAL SOURCES:
   drCharts:
@@ -34,8 +32,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   drCharts: fd568784a514819ea7af12aabdd67e00ac359370
-  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
 
-PODFILE CHECKSUM: 41aa41df05f0dedccf78134774d7b145e8afa04d
+PODFILE CHECKSUM: df700aef529e593bfa41cfe9bb49dce8b0dc930b
 
 COCOAPODS: 1.2.1
