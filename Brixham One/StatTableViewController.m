@@ -20,8 +20,6 @@
 @property (strong, nonatomic) NSString *object;
 @property (strong, nonatomic) NSArray *dateArray;
 
-@property (strong, nonatomic) NSArray *namesArray;
-@property (strong, nonatomic) NSArray *sitesArray;
 @property (copy, nonatomic) NSArray *contentArray;
 
 @property (strong, nonatomic) IBOutlet UITableView *dateView;
@@ -35,31 +33,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
-    self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
 
-    NSLog(@"date = %@",self.dateArray);
     [self sideBarButtonAction];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
 
+    [self chooseData];
+//    [self chooseController];
+//    [self getSitesArrayFromServer];
+    [self getContentFromServer];
+}
+
+#pragma mark - Config View
+
+- (void)chooseData {
+
     if (!self.dateArray) {
         NSData *dateData = [[NSUserDefaults standardUserDefaults] objectForKey:DATE];
         self.dateArray = [NSKeyedUnarchiver unarchiveObjectWithData:dateData];
+        if (!self.dateArray) {
+            [self configDate];
+        }
     }
     if (!self.object) {
         NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
         self.object = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
     }
-//    if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers.firstObject) {
-//        self.contentArray = self.namesArray;
-//    } else {
-//        self.contentArray = self.sitesArray;
-//    }
-    [self getSitesArrayFromSeever];
+    NSLog(@"date = %@",self.dateArray);
+    NSLog(@"site = %@",self.object);
 }
+
+- (void)configDate {
+
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"dd.MM.yy"];
+    NSString *todayString = [formatter stringFromDate:today];
+    self.dateArray = [NSArray arrayWithObjects:todayString,todayString, nil];
+}
+
+/*
+- (void)chooseController {
+
+    if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers.firstObject) {
+        self.contentArray = self.namesArray;
+    } else {
+        self.contentArray = self.sitesArray;
+    }
+}
+ */
 
 - (void)loadNavView {
 
@@ -69,14 +93,13 @@
     [dateView configTitleWithObject:self.object andDateArray:self.dateArray];
 }
 
-
 #pragma mark - Server
 
-- (void)getSitesArrayFromSeever {
+- (void)getSitesArrayFromServer {
 
     [[ServerManager sharedManager] getSitesOnSuccees:^(NSArray *sitesArray) {
-                                                Site *site = sitesArray.firstObject;
-                                                self.object = site.name;
+//                                                Site *site = sitesArray.firstObject;
+//                                                self.object = site.name;
                                                 [self getContentFromServer];
                                                 [self loadNavView];
                                            }
@@ -95,7 +118,6 @@
 
                                                    }
                                                    onFailure:^(NSError *error) {
-
                                                    }];
 
 }
@@ -160,10 +182,10 @@
 //        lvc.array = self.namesArray;
 //        lvc.delegate = self;
 //
-//    } else if ([segue.identifier isEqualToString:@"toDate"]) {
-//        DateViewController *dvc = [segue destinationViewController];
-//        dvc.delegate = self;
-//    }
+    [segue.identifier isEqualToString:@"toDate"];
+    DateViewController *dvc = [segue destinationViewController];
+    dvc.delegate = self;
+
 
 
 }

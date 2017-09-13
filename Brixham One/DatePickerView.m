@@ -29,10 +29,17 @@
 
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"dd.MM.yy"];
-//    [formatter setDateFormat:@"yy-MM-dd"];
+    NSDateFormatter *formatterForRequest = [NSDateFormatter new];
+    [formatterForRequest setDateFormat:@"yyyy-MM-dd"];
+
     NSString *beginDate = [formatter stringFromDate:self.beginDate.date];
     NSString *endDate = [formatter stringFromDate:self.endDate.date];
-    NSArray *array = [NSArray arrayWithObjects:beginDate,endDate, nil];
+
+    NSString *beginDateForRequest = [formatterForRequest stringFromDate:self.beginDate.date];
+    NSString *endDateForRequest = [formatterForRequest stringFromDate:self.endDate.date];
+    NSString *stringForRequest = [NSString stringWithFormat:@"%@:%@",beginDateForRequest,endDateForRequest];
+    NSArray *array = [NSArray arrayWithObjects:beginDate,stringForRequest,endDate, nil];
+
     [self.delegate getDateArray:array];
 }
 
@@ -41,9 +48,14 @@
     NSDate *today = [NSDate date];
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"dd.MM.yy"];
-//    [formatter setDateFormat:@"yy-MM-dd"];
+    NSDateFormatter *formatterForRequest = [NSDateFormatter new];
+    [formatterForRequest setDateFormat:@"yyyy-MM-dd"];
+
     NSString *todayString = [formatter stringFromDate:today];
-    NSArray *array = [NSArray arrayWithObjects:todayString,todayString, nil];
+    NSString *todayForRequest = [formatterForRequest stringFromDate:today];
+    NSString *stringForRequest = [NSString stringWithFormat:@"%@:%@",todayForRequest,todayForRequest];
+    NSArray *array = [NSArray arrayWithObjects:todayString,stringForRequest,todayString, nil];
+
     [self.delegate getDateArray:array];
 }
 

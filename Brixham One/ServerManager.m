@@ -56,11 +56,7 @@
                 onFailure:(void(^)(NSError *error))failure {
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-
-    NSLog(@"token = %@",[self tokenString]);
     [manager.requestSerializer setValue:[self tokenString] forHTTPHeaderField:@"Authorization"];
-
-    NSLog(@"request = %@",[[Router sharedManager] stringWithrequestType:SitesRequest]);
 
     [manager GET:[[Router sharedManager] stringWithrequestType:SitesRequest]
       parameters:nil
@@ -96,20 +92,30 @@
              Person *javaP = [Person new];
              javaP.name = @"Java";
              javaP.ranks = 0;
+             Person *javaScriptP = [Person new];
+             javaScriptP.name = @"Javascript";
+             javaScriptP.ranks = 0;
              Person *pythonP = [Person new];
              pythonP.name = @"Python";
              pythonP.ranks = 0;
+             Person *phpP = [Person new];
+             phpP.name = @"PHP";
+             phpP.ranks = 0;
 
              for (NSDictionary *dict in responseObject) {
                  Person *person = [[Person alloc] initWithDictionary:dict];
                  if ([person.name isEqualToString:javaP.name]) {
                      javaP.ranks += person.ranks;
-                 } else {
+                 } else if ([person.name isEqualToString:javaScriptP.name]){
+                     javaScriptP.ranks += person.ranks;
+                 } else if ([person.name isEqualToString:pythonP.name]){
                      pythonP.ranks += person.ranks;
+                 } else if ([person.name isEqualToString:phpP.name]){
+                     phpP.ranks += person.ranks;
                  }
              }
 
-             NSArray *personsArray = [NSArray arrayWithObjects:javaP,pythonP, nil];
+             NSArray *personsArray = [NSArray arrayWithObjects:javaP,javaScriptP,pythonP,phpP, nil];
              success(personsArray);
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -123,16 +129,10 @@
                            onSuccees:(void(^)(NSArray *ranksArray))success
                            onFailure:(void(^)(NSError *error))failure {
 
-    NSDate *begin = dateArray.firstObject;
-    NSDate *end = dateArray.lastObject;
-
-    NSString *dateString = [NSString stringWithFormat:@"%@:%@",begin,end];
-
+    NSString *dateString = dateArray[1];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             dateString,@"from",
                             site,@"search", nil];
-
-    NSLog(@"request = %@",[[Router sharedManager] stringWithrequestType:RanksForPeriodRequest]);
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager.requestSerializer setValue:[self tokenString] forHTTPHeaderField:@"Authorization"];
@@ -141,7 +141,6 @@
       parameters:params
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             NSLog(@"json = %@",responseObject);
 
              Person *javaP = [Person new];
              javaP.name = @"Java";
@@ -161,6 +160,7 @@
              }
         }
             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                NSLog(@"error = %@",error);
         }];
 }
 
