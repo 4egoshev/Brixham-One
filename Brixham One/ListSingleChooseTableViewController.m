@@ -43,36 +43,14 @@
 
     [[ServerManager sharedManager] getSitesOnSuccees:^(NSArray *sitesArray) {
                                                         self.contentArray = sitesArray;
-        NSLog(@"sities array = %@",self.contentArray);
+                                                        NSLog(@"sities array = %@",self.contentArray);
+                                                        [self.tableView reloadData];
+                                                        [self getIndexForSelectedRow];
                                                     }
                                            onFailure:^(NSError *error) {
 
                                                     }];
 }
-
-//Заменить на Core Data
-- (void)getContent {
-
-    switch (self.contentType) {
-    case NameType:
-        {
-            NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:NAME_LIST];
-            self.contentArray = [NSArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
-        }
-        break;
-    case SiteType:
-        {
-            NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:SITE_LIST];
-            self.contentArray = [NSArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
-        }
-        break;
-    default:
-        break;
-    }
-
-    [self getIndexForSelectedRow];
-}
-
 
 - (void)getIndexForSelectedRow {
 
@@ -139,7 +117,7 @@
     UITableViewCell *selectedSingleCell = [tableView cellForRowAtIndexPath:self.selectedIndex];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    NSString *object = self.contentArray[indexPath.row];
+    Site *site = self.contentArray[indexPath.row];
 
     switch (self.saveType) {
         case SettingsType:
@@ -148,7 +126,7 @@
                 selectedSingleCell.accessoryType = UITableViewCellAccessoryNone;
                 self.isChanged = YES;
             }
-            [self saveObject:object forIndexPath:indexPath];
+            [self saveObject:site.name forIndexPath:indexPath];
             break;
         case ViewType:
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -156,7 +134,7 @@
                 selectedSingleCell.accessoryType = UITableViewCellAccessoryNone;
                 self.isChanged = YES;
             }
-            [self.delegate getObject:object];
+            [self.delegate getObject:site.name];
             [self dismissViewControllerAnimated:self completion:nil];
             break;
         default:

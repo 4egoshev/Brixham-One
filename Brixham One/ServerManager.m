@@ -102,7 +102,6 @@
 
              for (NSDictionary *dict in responseObject) {
                  Person *person = [[Person alloc] initWithDictionary:dict];
-
                  if ([person.name isEqualToString:javaP.name]) {
                      javaP.ranks += person.ranks;
                  } else {

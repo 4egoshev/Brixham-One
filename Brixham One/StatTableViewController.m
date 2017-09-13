@@ -59,9 +59,6 @@
 //        self.contentArray = self.sitesArray;
 //    }
     [self getSitesArrayFromSeever];
-//    [self getContentFromServer];
-
-    NSLog(@"loaded");
 }
 
 - (void)loadNavView {
@@ -146,9 +143,6 @@
     Person *person = self.contentArray[indexPath.row];
     cell.textLabel.text = person.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",person.ranks];
-
-//    cell.textLabel.text = self.contentArray[indexPath.row];
-    NSLog(@"finish");
     return cell;
 }
 

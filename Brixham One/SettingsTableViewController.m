@@ -104,7 +104,7 @@
             {
                 ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:SiteType
                                                                                                                  andSaveTpe:SettingsType];
-                lvc.contentArray = self.sitesArray;
+//                lvc.contentArray = self.sitesArray;
                 [self.navigationController pushViewController:lvc animated:YES];
             }
                 break;

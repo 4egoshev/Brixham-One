@@ -14,7 +14,8 @@
     self = [super init];
     if (self) {
         _name = dict[@"Person"];
-        _ranks = (NSInteger)dict[@"Rank"];
+        NSString *ranksString = dict[@"Rank"];
+        _ranks = ranksString.integerValue;
     }
     return self;
 }
