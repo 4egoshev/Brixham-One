@@ -13,6 +13,7 @@
 #import "ServerManager.h"
 #import "DateView.h"
 #import "Site.h"
+#import "Person.h"
 
 @interface StatTableViewController () <ListDelegate, DateDelegate>
 
@@ -21,7 +22,7 @@
 
 @property (strong, nonatomic) NSArray *namesArray;
 @property (strong, nonatomic) NSArray *sitesArray;
-@property (copy, nonatomic) NSArray *array;
+@property (copy, nonatomic) NSArray *contentArray;
 
 @property (strong, nonatomic) IBOutlet UITableView *dateView;
 
@@ -52,20 +53,23 @@
         NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
         self.object = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
     }
+//    if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers.firstObject) {
+//        self.contentArray = self.namesArray;
+//    } else {
+//        self.contentArray = self.sitesArray;
+//    }
+    [self getSitesArrayFromSeever];
+//    [self getContentFromServer];
+
+    NSLog(@"loaded");
+}
+
+- (void)loadNavView {
 
     DateView *dateView = [[NSBundle mainBundle] loadNibNamed:@"DateView" owner:self options:nil].firstObject;
     self.navigationItem.titleView = dateView;
 
     [dateView configTitleWithObject:self.object andDateArray:self.dateArray];
-
-
-    if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers.firstObject) {
-        self.array = self.namesArray;
-    } else {
-        self.array = self.sitesArray;
-    }
-    [self getSitesArrayFromSeever];
-//    [self getContentFromServer];
 }
 
 
@@ -77,6 +81,7 @@
                                                 Site *site = sitesArray.firstObject;
                                                 self.object = site.name;
                                                 [self getContentFromServer];
+                                                [self loadNavView];
                                            }
                                            onFailure:^(NSError *error) {
 
@@ -87,6 +92,9 @@
 
     [[ServerManager sharedManager] getRanksForPersonFromSite:self.object
                                                    onSuccees:^(NSArray *ranksArray) {
+
+                                                       self.contentArray = ranksArray;
+                                                       [self.tableView reloadData];
 
                                                    }
                                                    onFailure:^(NSError *error) {
@@ -128,15 +136,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.array.count;
+    return self.contentArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    cell.textLabel.text = self.array[indexPath.row];
+    Person *person = self.contentArray[indexPath.row];
+    cell.textLabel.text = person.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",person.ranks];
 
+//    cell.textLabel.text = self.contentArray[indexPath.row];
+    NSLog(@"finish");
     return cell;
 }
 

@@ -66,12 +66,10 @@
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             NSLog(@"%@",responseObject);
+
              NSMutableArray *sitesArray = [NSMutableArray new];
              for (NSDictionary *dict in responseObject) {
-                 Site *site = [Site new];
-                 site.name = dict[@"Name"];
-                 site.id = (NSInteger)dict[@"id"];
+                 Site *site = [[Site alloc] initWithDictionary:dict];
                  [sitesArray addObject:site];
              }
              success(sitesArray);
@@ -94,11 +92,29 @@
       parameters:params
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             NSLog(@"json = %@",responseObject);
 
+             Person *javaP = [Person new];
+             javaP.name = @"Java";
+             javaP.ranks = 0;
+             Person *pythonP = [Person new];
+             pythonP.name = @"Python";
+             pythonP.ranks = 0;
 
+             for (NSDictionary *dict in responseObject) {
+                 Person *person = [[Person alloc] initWithDictionary:dict];
+
+                 if ([person.name isEqualToString:javaP.name]) {
+                     javaP.ranks += person.ranks;
+                 } else {
+                     pythonP.ranks += person.ranks;
+                 }
+             }
+
+             NSArray *personsArray = [NSArray arrayWithObjects:javaP,pythonP, nil];
+             success(personsArray);
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             NSLog(@"error = %@",error);
          }];
 }
 
@@ -127,6 +143,23 @@
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              NSLog(@"json = %@",responseObject);
+
+             Person *javaP = [Person new];
+             javaP.name = @"Java";
+             javaP.ranks = 0;
+             Person *pythonP = [Person new];
+             pythonP.name = @"Python";
+             pythonP.ranks = 0;
+
+             for (NSDictionary *dict in responseObject) {
+                 Person *person = [[Person alloc] initWithDictionary:dict];
+
+                 if ([person.name isEqualToString:javaP.name]) {
+                     javaP.ranks += person.ranks;
+                 } else {
+                     pythonP.ranks += person.ranks;
+                 }
+             }
         }
             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         }];
