@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -695,7 +694,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSI-un-iW9">
-                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <rect key="frame" x="0.0" y="137" width="375" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -707,9 +706,16 @@
                             <constraint firstAttribute="trailing" secondItem="xSI-un-iW9" secondAttribute="trailing" id="wZl-7T-nMd"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="nna-ho-1jK">
                         <barButtonItem key="leftBarButtonItem" image="Sider_Menu-25" id="0Nx-qL-khj"/>
+                        <barButtonItem key="rightBarButtonItem" image="Список-25" id="5j9-5Q-ocV">
+                            <connections>
+                                <action selector="listButtonAction:" destination="Yk1-xq-9nY" id="uDX-Iv-hE8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="pieView" destination="xSI-un-iW9" id="KdH-NO-ruD"/>
                         <outlet property="sidebarButton" destination="0Nx-qL-khj" id="Cbg-Ih-nNg"/>
@@ -777,18 +783,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Сегодня" id="iF7-k3-g55">
                         <barButtonItem key="leftBarButtonItem" image="Sider_Menu-25" id="yBs-c0-cgG"/>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="Список-25" id="5iI-bJ-lLU">
-                                <connections>
-                                    <action selector="listButtonAction:" destination="OLn-nh-APW" id="GaR-hP-8ur"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="Календарь-25" id="rpH-CA-Jlo">
-                                <connections>
-                                    <segue destination="YX6-jX-vah" kind="presentation" identifier="toDate" id="Gyz-jY-30e"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Список-25" id="5iI-bJ-lLU">
+                            <connections>
+                                <action selector="listButtonAction:" destination="OLn-nh-APW" id="GaR-hP-8ur"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateView" destination="GDS-XI-uoQ" id="kPH-Q1-Mny"/>
@@ -916,7 +915,6 @@
         <image name="График-25" width="25" height="25"/>
         <image name="Диаграмма круг-25" width="25" height="25"/>
         <image name="Диаграмма-25" width="25" height="25"/>
-        <image name="Календарь-25" width="25" height="25"/>
         <image name="Личности-25" width="25" height="25"/>
         <image name="Настройки-25" width="25" height="25"/>
         <image name="Список-25" width="25" height="25"/>

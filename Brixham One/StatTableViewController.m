@@ -43,6 +43,7 @@
     [self chooseData];
 //    [self chooseController];
 //    [self getSitesArrayFromServer];
+    [self loadNavView];
     [self getContentFromServer];
 }
 
@@ -54,7 +55,7 @@
         NSData *dateData = [[NSUserDefaults standardUserDefaults] objectForKey:DATE];
         self.dateArray = [NSKeyedUnarchiver unarchiveObjectWithData:dateData];
         if (!self.dateArray) {
-            [self configDate];
+            [self configDateToday];
         }
     }
     if (!self.object) {
@@ -65,7 +66,7 @@
     NSLog(@"site = %@",self.object);
 }
 
-- (void)configDate {
+- (void)configDateToday {
 
     NSDate *today = [NSDate date];
     NSDateFormatter *formatter = [NSDateFormatter new];
@@ -119,7 +120,6 @@
                                                    }
                                                    onFailure:^(NSError *error) {
                                                    }];
-
 }
 
 #pragma mark - Navigation Buttons
@@ -166,28 +166,6 @@
     cell.textLabel.text = person.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",person.ranks];
     return cell;
-}
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-//    if ([segue.identifier isEqualToString:@"toList"] && self.tabBarController.selectedViewController == self.tabBarController.viewControllers[0]) {
-//        ListTableViewController *lvc = [segue destinationViewController];
-//        lvc.array = self.sitesArray;
-//        lvc.delegate = self;
-//
-//    } else if ([segue.identifier isEqualToString:@"toList"] && self.tabBarController.selectedViewController == self.tabBarController.viewControllers[1]) {
-//        ListTableViewController *lvc = [segue destinationViewController];
-//        lvc.array = self.namesArray;
-//        lvc.delegate = self;
-//
-    [segue.identifier isEqualToString:@"toDate"];
-    DateViewController *dvc = [segue destinationViewController];
-    dvc.delegate = self;
-
-
-
 }
 
 #pragma mark - ListDelegate

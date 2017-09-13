@@ -145,19 +145,30 @@
              Person *javaP = [Person new];
              javaP.name = @"Java";
              javaP.ranks = 0;
+             Person *javaScriptP = [Person new];
+             javaScriptP.name = @"Javascript";
+             javaScriptP.ranks = 0;
              Person *pythonP = [Person new];
              pythonP.name = @"Python";
              pythonP.ranks = 0;
+             Person *phpP = [Person new];
+             phpP.name = @"PHP";
+             phpP.ranks = 0;
 
              for (NSDictionary *dict in responseObject) {
                  Person *person = [[Person alloc] initWithDictionary:dict];
-
                  if ([person.name isEqualToString:javaP.name]) {
                      javaP.ranks += person.ranks;
-                 } else {
+                 } else if ([person.name isEqualToString:javaScriptP.name]){
+                     javaScriptP.ranks += person.ranks;
+                 } else if ([person.name isEqualToString:pythonP.name]){
                      pythonP.ranks += person.ranks;
+                 } else if ([person.name isEqualToString:phpP.name]){
+                     phpP.ranks += person.ranks;
                  }
              }
+             NSArray *personsArray = [NSArray arrayWithObjects:javaP,javaScriptP,pythonP,phpP, nil];
+             success(personsArray);
         }
             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error = %@",error);

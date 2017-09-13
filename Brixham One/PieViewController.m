@@ -10,10 +10,14 @@
 #import <drCharts/DrGraphs.h>
 #import "Constants.h"
 #import "SWRevealViewController.h"
-
-#define header_height 65
+#import "ServerManager.h"
+#import "ListSingleChooseTableViewController.h"
+#import "DateView.h"
 
 @interface PieViewController () <PieChartDataSource,PieChartDelegate>
+
+@property (strong, nonatomic) NSString *object;
+@property (strong, nonatomic) NSArray *dateArray;
 
 @property (strong, nonatomic) NSArray *contentArray;
 
@@ -26,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self loadNavView];
     [self sideBarButtonAction];
     [self createPieChart];
 }
@@ -41,7 +47,63 @@
     }
 }
 
+- (void)chooseData {
+
+    if (!self.dateArray) {
+        NSData *dateData = [[NSUserDefaults standardUserDefaults] objectForKey:DATE];
+        self.dateArray = [NSKeyedUnarchiver unarchiveObjectWithData:dateData];
+        if (!self.dateArray) {
+            [self configDateToday];
+        }
+    }
+    if (!self.object) {
+        NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
+        self.object = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
+    }
+    NSLog(@"date = %@",self.dateArray);
+    NSLog(@"site = %@",self.object);
+}
+
+- (void)configDateToday {
+
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"dd.MM.yy"];
+    NSString *todayString = [formatter stringFromDate:today];
+    self.dateArray = [NSArray arrayWithObjects:todayString,todayString, nil];
+}
+
+- (void)loadNavView {
+
+    DateView *dateView = [[NSBundle mainBundle] loadNibNamed:@"DateView" owner:self options:nil].firstObject;
+    self.navigationItem.titleView = dateView;
+
+    [dateView configTitleWithObject:self.object andDateArray:self.dateArray];
+}
+
+- (IBAction)listButtonAction:(id)sender {
+
+    ListSingleChooseTableViewController *lvc = [[ListSingleChooseTableViewController alloc] initWithContentType:SiteType andSaveTpe:ViewType];
+    lvc.delegate = self;
+    [self.navigationController presentViewController:lvc animated:YES completion:nil];
+}
+
+
+#pragma mark - Server
+
+- (void)getContentFromServer {
+
+    [[ServerManager sharedManager] getRanksForPersonFromSite:self.object
+                                                   onSuccees:^(NSArray *ranksArray) {
+
+                                                       self.contentArray = ranksArray;
+                                                   }
+                                                   onFailure:^(NSError *error) {
+                                                   }];
+}
+
 #pragma - mark CreatePieChart
+
 - (void)createPieChart{
     PieChart *chart = [[PieChart alloc] initWithFrame:CGRectMake(0, header_height, WIDTH(self.view), (HEIGHT(self.view) - header_height)/2)];
     [chart setDataSource:self];
@@ -49,12 +111,12 @@
     [chart setLegendViewType:LegendTypeHorizontal];
     [chart setShowCustomMarkerView:TRUE];
     [chart drawPieChart];
-    [self.pieView addSubview:chart];
+    [self.view addSubview:chart];
 }
 
 #pragma - mark PieChartDataSource
 - (NSInteger)numberOfValuesForPieChart{
-    return 8;
+    return self.contentArray.count;
 }
 
 - (UIColor *)colorForValueInPieChartWithIndex:(NSInteger)lineNumber{
