@@ -11,7 +11,6 @@
 @interface Site : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSDate *date;
-@property (assign, nonatomic) NSInteger ranks;
+@property (assign, nonatomic) NSInteger id;
 
 @end

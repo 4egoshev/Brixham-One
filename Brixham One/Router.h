@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
 
-typedef enum {
-    LoginRequest = 0,
-    SitesRequest,
-    RanksRequest
-} RequestType;
+//typedef enum {
+//    LoginRequest = 0,
+//    SitesRequest,
+//    RanksForPeriodRequest,
+//    RanksRequest
+//} RequestType;
 
 @interface Router : NSObject
 

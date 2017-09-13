@@ -30,9 +30,12 @@
             method = @"api/user/api-token-auth/";
             break;
         case SitesRequest:
-            method = @"api/sites/";
+            method = @"api/user/sites/";
             break;
         case RanksRequest:
+            method = @"api/user/personrank/";
+            break;
+        case RanksForPeriodRequest:
             method = @"api/user/period/";
             break;
 

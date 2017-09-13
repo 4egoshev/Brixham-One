@@ -11,6 +11,8 @@
 #import "DateViewController.h"
 #import "SWRevealViewController.h"
 #import "ServerManager.h"
+#import "DateView.h"
+#import "Site.h"
 
 @interface StatTableViewController () <ListDelegate, DateDelegate>
 
@@ -20,6 +22,8 @@
 @property (strong, nonatomic) NSArray *namesArray;
 @property (strong, nonatomic) NSArray *sitesArray;
 @property (copy, nonatomic) NSArray *array;
+
+@property (strong, nonatomic) IBOutlet UITableView *dateView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *listButton;
@@ -33,8 +37,6 @@
     self.namesArray = [NSArray arrayWithObjects:@"Путин",@"Медведев",@"Навальный", nil];
     self.sitesArray = [NSArray arrayWithObjects:@"www.mail.ru",@"www.yandex.ru",@"www.rambler.ru",@"www.google.com",@"www.yahoo.com",nil];
 
-    [self getContentFromServer];
-
     NSLog(@"date = %@",self.dateArray);
     [self sideBarButtonAction];
 }
@@ -42,18 +44,58 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
 
+    if (!self.dateArray) {
+        NSData *dateData = [[NSUserDefaults standardUserDefaults] objectForKey:DATE];
+        self.dateArray = [NSKeyedUnarchiver unarchiveObjectWithData:dateData];
+    }
+    if (!self.object) {
+        NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
+        self.object = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
+    }
+
+    DateView *dateView = [[NSBundle mainBundle] loadNibNamed:@"DateView" owner:self options:nil].firstObject;
+    self.navigationItem.titleView = dateView;
+
+    [dateView configTitleWithObject:self.object andDateArray:self.dateArray];
+
+
     if (self.tabBarController.selectedViewController == self.tabBarController.viewControllers.firstObject) {
         self.array = self.namesArray;
     } else {
         self.array = self.sitesArray;
     }
-    
-    if (!self.dateArray) {
-        self.navigationItem.title = @"Сегодня";
-    } else {
-        self.navigationItem.title = [NSString stringWithFormat:@"%@-%@",self.dateArray[0],self.dateArray[1]];
-    }
+    [self getSitesArrayFromSeever];
+//    [self getContentFromServer];
 }
+
+
+#pragma mark - Server
+
+- (void)getSitesArrayFromSeever {
+
+    [[ServerManager sharedManager] getSitesOnSuccees:^(NSArray *sitesArray) {
+                                                Site *site = sitesArray.firstObject;
+                                                self.object = site.name;
+                                                [self getContentFromServer];
+                                           }
+                                           onFailure:^(NSError *error) {
+
+                                           }];
+}
+
+- (void)getContentFromServer {
+
+    [[ServerManager sharedManager] getRanksForPersonFromSite:self.object
+                                                   onSuccees:^(NSArray *ranksArray) {
+
+                                                   }
+                                                   onFailure:^(NSError *error) {
+
+                                                   }];
+
+}
+
+#pragma mark - Navigation Buttons
 
 - (void)sideBarButtonAction {
 
@@ -64,17 +106,6 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-}
-
-- (void)getContentFromServer {
-    [[ServerManager sharedManager] getRanksForPersonForDateArray:self.dateArray
-                                                        fromSite:self.sitesArray[0]
-                                                       onSuccees:^(NSArray *ranksArray) {
-
-                                                       }
-                                                       onFailure:^(NSError *error) {
-
-                                                       }];
 }
 
 - (IBAction)listButtonAction:(id)sender {

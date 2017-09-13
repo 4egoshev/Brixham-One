@@ -15,6 +15,9 @@
 		C90B4EB31F65DB9E0038BB13 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB01F65DB9E0038BB13 /* Person.m */; };
 		C90B4EB41F65DB9E0038BB13 /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB21F65DB9E0038BB13 /* Site.m */; };
 		C90B4EB81F65E35D0038BB13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EB71F65E35D0038BB13 /* User.m */; };
+		C90B4EC61F664BAF0038BB13 /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B4EC51F664BAF0038BB13 /* PieViewController.m */; };
+		C90B4EC81F664C810038BB13 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B4EC71F664C810038BB13 /* libAFNetworking.a */; };
+		C90B4ECA1F664C850038BB13 /* libdrCharts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B4EC91F664C850038BB13 /* libdrCharts.a */; };
 		C92B32101F4F591E00C165B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B320F1F4F591E00C165B0 /* main.m */; };
 		C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B32121F4F591E00C165B0 /* AppDelegate.m */; };
 		C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92B321A1F4F591E00C165B0 /* Assets.xcassets */; };
@@ -29,6 +32,8 @@
 		C9A169F11F5CA109000871E6 /* ChooseDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F01F5CA109000871E6 /* ChooseDateViewController.m */; };
 		C9A169F41F5D2951000871E6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F31F5D2951000871E6 /* SettingsTableViewController.m */; };
 		C9A169F81F5E759D000871E6 /* ListSingleChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A169F71F5E759D000871E6 /* ListSingleChooseTableViewController.m */; };
+		C9EAA3201F676DD300D383B2 /* DateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EAA31F1F676DD300D383B2 /* DateView.xib */; };
+		C9EAA3231F676E6D00D383B2 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAA3221F676E6D00D383B2 /* DateView.m */; };
 		E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +56,10 @@
 		C90B4EB21F65DB9E0038BB13 /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Site.m; sourceTree = "<group>"; };
 		C90B4EB61F65E35D0038BB13 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		C90B4EB71F65E35D0038BB13 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		C90B4EC41F664BAF0038BB13 /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
+		C90B4EC51F664BAF0038BB13 /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
+		C90B4EC71F664C810038BB13 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../../../../Library/Developer/Xcode/DerivedData/Brixham_One-extwowyzoqvsuegszsgfjbfcdfky/Build/Products/Debug-iphonesimulator/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		C90B4EC91F664C850038BB13 /* libdrCharts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdrCharts.a; path = "../../../../../Library/Developer/Xcode/DerivedData/Brixham_One-extwowyzoqvsuegszsgfjbfcdfky/Build/Products/Debug-iphonesimulator/drCharts/libdrCharts.a"; sourceTree = "<group>"; };
 		C92B320B1F4F591E00C165B0 /* Brixham One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brixham One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92B320F1F4F591E00C165B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92B32111F4F591E00C165B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +86,9 @@
 		C9A169F51F5DD1B3000871E6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C9A169F61F5E759D000871E6 /* ListSingleChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSingleChooseTableViewController.h; sourceTree = "<group>"; };
 		C9A169F71F5E759D000871E6 /* ListSingleChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSingleChooseTableViewController.m; sourceTree = "<group>"; };
+		C9EAA31F1F676DD300D383B2 /* DateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateView.xib; sourceTree = "<group>"; };
+		C9EAA3211F676E6D00D383B2 /* DateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateView.h; sourceTree = "<group>"; };
+		C9EAA3221F676E6D00D383B2 /* DateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90B4ECA1F664C850038BB13 /* libdrCharts.a in Frameworks */,
+				C90B4EC81F664C810038BB13 /* libAFNetworking.a in Frameworks */,
 				E291715BFAD050A3D65B0AEE /* libPods-Brixham One.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +117,8 @@
 		AECD8D1ACA2E0670C053FFAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C90B4EC91F664C850038BB13 /* libdrCharts.a */,
+				C90B4EC71F664C810038BB13 /* libAFNetworking.a */,
 				BDEB8B7E0FD0FE9DC0C4BB65 /* libPods-Brixham One.a */,
 			);
 			name = Frameworks;
@@ -187,6 +203,8 @@
 				C9705FAC1F52D8F0006B4CE6 /* StatTableViewController.m */,
 				C90B4EA31F65DB350038BB13 /* LoginViewController.h */,
 				C90B4EA41F65DB350038BB13 /* LoginViewController.m */,
+				C90B4EC41F664BAF0038BB13 /* PieViewController.h */,
+				C90B4EC51F664BAF0038BB13 /* PieViewController.m */,
 				C9F466A71F60AC4300C21360 /* Settings */,
 			);
 			name = Controllers;
@@ -210,6 +228,9 @@
 				C9A169EC1F5C9F4C000871E6 /* DatePickerView.h */,
 				C9A169ED1F5C9F4C000871E6 /* DatePickerView.m */,
 				C9A169EA1F5C9C04000871E6 /* DatePickerView.xib */,
+				C9EAA3211F676E6D00D383B2 /* DateView.h */,
+				C9EAA3221F676E6D00D383B2 /* DateView.m */,
+				C9EAA31F1F676DD300D383B2 /* DateView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -294,6 +315,7 @@
 				C92B321E1F4F591E00C165B0 /* LaunchScreen.storyboard in Resources */,
 				C9A169EB1F5C9C04000871E6 /* DatePickerView.xib in Resources */,
 				C90B4EA61F65DB360038BB13 /* LoginView.xib in Resources */,
+				C9EAA3201F676DD300D383B2 /* DateView.xib in Resources */,
 				C92B321B1F4F591E00C165B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +378,8 @@
 				C9A169F41F5D2951000871E6 /* SettingsTableViewController.m in Sources */,
 				C92B32131F4F591E00C165B0 /* AppDelegate.m in Sources */,
 				C9A169F81F5E759D000871E6 /* ListSingleChooseTableViewController.m in Sources */,
+				C90B4EC61F664BAF0038BB13 /* PieViewController.m in Sources */,
+				C9EAA3231F676E6D00D383B2 /* DateView.m in Sources */,
 				C92B32451F4F59CF00C165B0 /* DateViewController.m in Sources */,
 				C90B4EB81F65E35D0038BB13 /* User.m in Sources */,
 				C90B4EAD1F65DB620038BB13 /* ServerManager.m in Sources */,

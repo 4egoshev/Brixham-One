@@ -8,6 +8,7 @@
 
 #import "ListSingleChooseTableViewController.h"
 #import "ServerManager.h"
+#import "Site.h"
 
 @interface ListSingleChooseTableViewController ()
 
@@ -27,6 +28,7 @@
     if (self) {
         self.contentType = contentType;
         self.saveType = saveType;
+        self.contentArray = [NSArray new];
     }
     return self;
 }
@@ -34,17 +36,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self requestForServer];
+    [self getContentForServer];
 }
 
-- (void)requestForServer {
+- (void)getContentForServer {
 
-    [[ServerManager sharedManager] getSitesOnSuccees:^(NSArray *ranksArray) {
-
-                                           }
+    [[ServerManager sharedManager] getSitesOnSuccees:^(NSArray *sitesArray) {
+                                                        self.contentArray = sitesArray;
+        NSLog(@"sities array = %@",self.contentArray);
+                                                    }
                                            onFailure:^(NSError *error) {
-                                               
-                                           }];
+
+                                                    }];
 }
 
 //Заменить на Core Data
@@ -69,6 +72,7 @@
 
     [self getIndexForSelectedRow];
 }
+
 
 - (void)getIndexForSelectedRow {
 
@@ -121,7 +125,8 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
 
-    cell.textLabel.text = self.contentArray[indexPath.row];
+    Site *site = self.contentArray[indexPath.row];
+    cell.textLabel.text = site.name;
     
     return cell;
 }

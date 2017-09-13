@@ -11,7 +11,8 @@
 #import "Person.h"
 #import "Site.h"
 #import "Router.h"
-#import "User.h"
+#import "Site.h"
+#import "Person.h"
 #import "Constants.h"
 
 @implementation ServerManager
@@ -31,8 +32,6 @@
              onSuccees:(void(^)(NSString *accessToken))success
              onFailure:(void(^)(NSError *error))failure {
 
-    NSLog(@"login = %@ password = %@",login,password);
-
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             login,@"username",
                             password,@"password",nil];
@@ -41,9 +40,10 @@
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                     NSLog(@"token = %@",responseObject);
-                                     User *user = [User new];
-                                     user.token = responseObject;
+
+                                     NSString *toketString = responseObject[@"token"];
+                                     NSData *tokenData = [NSKeyedArchiver archivedDataWithRootObject:toketString];
+                                     [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"Token"];
                                      success(responseObject);
                                  }
                                  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -52,22 +52,54 @@
 
 }
 
-- (void)getSitesOnSuccees:(void(^)(NSArray *ranksArray))success
+- (void)getSitesOnSuccees:(void(^)(NSArray *sitesArray))success
                 onFailure:(void(^)(NSError *error))failure {
 
-//    User *user = [User new];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
+    NSLog(@"token = %@",[self tokenString]);
+    [manager.requestSerializer setValue:[self tokenString] forHTTPHeaderField:@"Authorization"];
 
     NSLog(@"request = %@",[[Router sharedManager] stringWithrequestType:SitesRequest]);
 
-    [[AFHTTPSessionManager manager] GET:[[Router sharedManager] stringWithrequestType:SitesRequest]
-                             parameters:nil
-                               progress:nil
-                                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                    NSLog(@"Sites = %@",responseObject);
-                                }
-                                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                                    NSLog(@"error = %@",error);
-                                }];
+    [manager GET:[[Router sharedManager] stringWithrequestType:SitesRequest]
+      parameters:nil
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             NSLog(@"%@",responseObject);
+             NSMutableArray *sitesArray = [NSMutableArray new];
+             for (NSDictionary *dict in responseObject) {
+                 Site *site = [Site new];
+                 site.name = dict[@"Name"];
+                 site.id = (NSInteger)dict[@"id"];
+                 [sitesArray addObject:site];
+             }
+             success(sitesArray);
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             NSLog(@"error = %@",error);
+         }];
+}
+
+- (void)getRanksForPersonFromSite:(NSString *)site
+                        onSuccees:(void(^)(NSArray *ranksArray))success
+                        onFailure:(void(^)(NSError *error))failure {
+
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:site,@"search", nil];
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager.requestSerializer setValue:[self tokenString] forHTTPHeaderField:@"Authorization"];
+
+    [manager GET:[[Router sharedManager] stringWithrequestType:RanksForPeriodRequest]
+      parameters:params
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             NSLog(@"json = %@",responseObject);
+
+
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         }];
 }
 
 
@@ -79,59 +111,34 @@
     NSDate *begin = dateArray.firstObject;
     NSDate *end = dateArray.lastObject;
 
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            begin,@"",
-                            end,@"",
-                            site,@"", nil];
-
-    [[AFHTTPSessionManager manager] GET:[[Router sharedManager] stringWithrequestType:RanksRequest]
-                             parameters:params
-                               progress:nil
-                                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                    NSLog(@"json = %@",responseObject);
-                                }
-                                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
-                                }];
-
-    
-}
-
-/*
--(void)getRanksForSitesForDateArray:(NSArray *)dateArray
-                          forPerson:(NSString *)person
-                          onSuccees:(void(^)(NSArray *ranksArray))success
-                          onFailure:(void(^)(NSError *error))failure {
-
-    NSDate *begin = dateArray.firstObject;
-    NSDate *end = dateArray.lastObject;
+    NSString *dateString = [NSString stringWithFormat:@"%@:%@",begin,end];
 
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            @"beginDate",begin,
-                            @"endDate",end,
-                            @"person",person, nil];
+                            dateString,@"from",
+                            site,@"search", nil];
+
+    NSLog(@"request = %@",[[Router sharedManager] stringWithrequestType:RanksForPeriodRequest]);
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"API"
+    [manager.requestSerializer setValue:[self tokenString] forHTTPHeaderField:@"Authorization"];
+
+    [manager GET:[[Router sharedManager] stringWithrequestType:RanksForPeriodRequest]
       parameters:params
+        progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
-             NSArray *responseArray = responseObject[@"persons"];
-             NSMutableArray *array = [NSMutableArray new];
-
-             for (NSDictionary *dict in responseArray) {
-                 Site *site = [Site new];
-                 site.name = dict[@"name"];
-                 site.ranks = dict[@"ranks"];
-                 [array addObject:person];
-             }
-             success(array);
-         }
-         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             NSLog(@"%@",error);
-         }];
-    
+             NSLog(@"json = %@",responseObject);
+        }
+            failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        }];
 }
-*/
+
+#pragma mark - Token
+
+- (NSString *)tokenString {
+
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"Token"];
+    NSString *token = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return [NSString stringWithFormat:@"JWT %@",token];
+}
 
 @end

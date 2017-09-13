@@ -24,7 +24,17 @@ typedef enum {
     SiteType
 }ContentType;
 
+//Router
+typedef enum {
+    LoginRequest = 0,
+    SitesRequest,
+    RanksForPeriodRequest,
+    RanksRequest
+} RequestType;
+
 #define DAY_AGO -86400
+
+#define header_height 65
 
 //TableView
 #define SECOND_SECTION 1
