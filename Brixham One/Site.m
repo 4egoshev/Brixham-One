@@ -10,4 +10,13 @@
 
 @implementation Site
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict {
+    self = [super init];
+    if (self) {
+        _name = dict[@"Name"];
+        _id = (NSInteger)dict[@"id"];
+    }
+    return self;
+}
+
 @end

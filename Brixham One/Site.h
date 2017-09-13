@@ -13,4 +13,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (assign, nonatomic) NSInteger id;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+
 @end

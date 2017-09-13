@@ -14,4 +14,6 @@
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) NSInteger ranks;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+
 @end

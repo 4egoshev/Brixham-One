@@ -10,4 +10,13 @@
 
 @implementation Person
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict {
+    self = [super init];
+    if (self) {
+        _name = dict[@"Person"];
+        _ranks = (NSInteger)dict[@"Rank"];
+    }
+    return self;
+}
+
 @end
