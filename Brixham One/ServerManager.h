@@ -15,8 +15,8 @@
 
 - (void)loginWithLogin:(NSString *)login
            andPassword:(NSString *)password
-             onSuccees:(void(^)(NSString *accessToken))success
-             onFailure:(void(^)(NSError *error))failure;
+             onSuccees:(void(^)())success
+             onFailure:(void(^)())failure;
 
 - (void)getSitesOnSuccees:(void(^)(NSArray *sitesArray))success
                 onFailure:(void(^)(NSError *error))failure;

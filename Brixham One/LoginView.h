@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginView : UIView
+@interface LoginView : UIView <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *worningLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *loginField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
+
+- (void)showWorning;
 
 @end

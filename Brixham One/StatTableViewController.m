@@ -62,8 +62,6 @@
         NSData *siteData = [[NSUserDefaults standardUserDefaults] objectForKey:SITE];
         self.object = [NSKeyedUnarchiver unarchiveObjectWithData:siteData];
     }
-    NSLog(@"date = %@",self.dateArray);
-    NSLog(@"site = %@",self.object);
 }
 
 - (void)configDateToday {

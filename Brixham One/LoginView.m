@@ -10,13 +10,15 @@
 
 @implementation LoginView
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UIView* view in self.subviews)
         [view resignFirstResponder];
 }
+
+- (void)showWorning {
+    self.worningLabel.text = @"Неверный логин или пароль";
+    self.worningLabel.textColor = [UIColor redColor];
+}
+
+
 @end

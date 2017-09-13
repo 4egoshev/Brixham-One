@@ -21,6 +21,8 @@
     } else {
         self.dateLabel.text = [NSString stringWithFormat:@"%@-%@",begin,end];
     }
+    self.objectLabel.textColor = [UIColor whiteColor];
+    self.dateLabel.textColor = [UIColor whiteColor];
 }
 
 @end

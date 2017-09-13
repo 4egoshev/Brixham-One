@@ -26,30 +26,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self loadLoginView];
+}
+
+- (void)loadLoginView {
+
     LoginView *loginView = [[NSBundle mainBundle] loadNibNamed:@"LoginView" owner:self options:nil].firstObject;
     loginView.frame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height);
     [loginView.enterButton addTarget:self action:@selector(enter:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginView];
 
     self.loginView = loginView;
-
-
 }
 
 - (void)enter:(id)sender {
 
     [[ServerManager sharedManager] loginWithLogin:self.loginView.loginField.text
                                       andPassword:self.loginView.passwordField.text
-                                        onSuccees:^(NSString *accessToken) {
-                                            NSLog(@"Enter");
-                                            if (accessToken) {
+                                        onSuccees:^() {
                                                 UIStoryboard *storuboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                                 SWRevealViewController *swvc = [storuboard instantiateViewControllerWithIdentifier:@"SWVC"];
                                                 [self presentViewController:swvc animated:YES completion:nil];
-                                            }
                                         }
-                                        onFailure:^(NSError *error) {
-                                            NSLog(@"Not");
+                                        onFailure:^() {
+                                            [self.loginView showWorning];
                                         }];
 }
 

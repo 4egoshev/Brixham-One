@@ -29,8 +29,8 @@
 
 - (void)loginWithLogin:(NSString *)login
            andPassword:(NSString *)password
-             onSuccees:(void(^)(NSString *accessToken))success
-             onFailure:(void(^)(NSError *error))failure {
+             onSuccees:(void(^)())success
+             onFailure:(void(^)())failure {
 
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             login,@"username",
@@ -44,12 +44,12 @@
                                      NSString *toketString = responseObject[@"token"];
                                      NSData *tokenData = [NSKeyedArchiver archivedDataWithRootObject:toketString];
                                      [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"Token"];
-                                     success(responseObject);
+                                     success();
                                  }
                                  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                      NSLog(@"eror = %@",error);
+                                     failure();
                                  }];
-
 }
 
 - (void)getSitesOnSuccees:(void(^)(NSArray *sitesArray))success
